@@ -1,890 +1,3330 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+    <meta
+        name="description"
+        content="IA Prática — ferramentas inteligentes para atendimento, marketing, gestão e uso de IA em pequenos negócios."
+    >
 
-  <meta
-    name="description"
-    content="IA Prática — ferramentas de inteligência artificial para ajudar pequenos negócios no atendimento, marketing e gestão."
-  >
+    <meta name="theme-color" content="#080d18">
+    <meta name="color-scheme" content="dark">
 
-  <meta name="theme-color" content="#080d1a">
+    <title>IA Prática — Seu negócio, simplificado</title>
 
-  <title>IA Prática | Inteligência Artificial para pequenos negócios</title>
-
-  <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
-  <!-- =========================
-       NAVBAR
-  ========================== -->
+    <!-- ==================== HEADER ==================== -->
 
-  <header class="navbar">
+    <header class="header" id="inicio">
 
-    <div class="container navbar-container">
+        <div class="container header-content">
 
-      <a href="#inicio" class="logo">
-        <div class="logo-icon">IA</div>
+            <a
+                href="#inicio"
+                class="logo"
+                aria-label="IA Prática - início"
+            >
+                <span
+                    class="logo-icon"
+                    aria-hidden="true"
+                >
+                    ✦
+                </span>
 
-        <div class="logo-text">
-          <strong>IA Prática</strong>
-          <span>Inteligência que trabalha com você</span>
-        </div>
-      </a>
-
-      <nav class="nav-links">
-        <a href="#recursos">Recursos</a>
-        <a href="#beneficios">Benefícios</a>
-        <a href="#como-funciona">Como funciona</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-
-      <a href="#recursos" class="btn btn-small">
-        Começar agora
-      </a>
-
-    </div>
-
-  </header>
-
-
-  <main>
-
-    <!-- =========================
-         HERO
-    ========================== -->
-
-    <section class="hero" id="inicio">
-
-      <div class="hero-glow hero-glow-one"></div>
-      <div class="hero-glow hero-glow-two"></div>
-
-      <div class="container hero-container">
-
-        <div class="hero-content">
-
-          <div class="badge">
-            <span class="badge-dot"></span>
-            Inteligência artificial simples e prática
-          </div>
-
-          <h1>
-            Menos tarefas repetitivas.
-            <span>Mais tempo para seu negócio.</span>
-          </h1>
-
-          <p class="hero-description">
-            Atendimento, marketing e gestão em um único lugar.
-            Use inteligência artificial para criar conteúdos,
-            responder clientes e organizar seu negócio em poucos segundos.
-          </p>
-
-          <div class="hero-buttons">
-
-            <a href="#recursos" class="btn btn-primary">
-              Explorar ferramentas
-              <span>→</span>
+                <span class="logo-name">
+                    IA <strong>Prática</strong>
+                </span>
             </a>
 
-            <a href="#como-funciona" class="btn btn-secondary">
-              Ver como funciona
+
+            <nav
+                class="nav"
+                aria-label="Navegação principal"
+            >
+                <a href="#ferramentas">
+                    Ferramentas
+                </a>
+
+                <a href="#beneficios">
+                    Benefícios
+                </a>
+
+                <a href="#como-funciona">
+                    Como funciona
+                </a>
+
+                <a href="#faq">
+                    FAQ
+                </a>
+            </nav>
+
+
+            <a
+                href="#ferramentas"
+                class="header-button"
+            >
+                Começar agora
+
+                <span aria-hidden="true">
+                    →
+                </span>
             </a>
-
-          </div>
-
-          <div class="hero-info">
-
-            <div class="hero-info-item">
-              <strong>Rápido</strong>
-              <span>Resultados em segundos</span>
-            </div>
-
-            <div class="hero-info-divider"></div>
-
-            <div class="hero-info-item">
-              <strong>Simples</strong>
-              <span>Sem precisar entender de IA</span>
-            </div>
-
-            <div class="hero-info-divider"></div>
-
-            <div class="hero-info-item">
-              <strong>Prático</strong>
-              <span>Feito para o dia a dia</span>
-            </div>
-
-          </div>
 
         </div>
 
+    </header>
 
-        <!-- DASHBOARD DEMONSTRATIVO -->
 
-        <div class="hero-dashboard">
 
-          <div class="dashboard-window">
+    <main>
 
-            <div class="dashboard-top">
 
-              <div class="window-buttons">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
+        <!-- ==================== HERO ==================== -->
 
-              <div class="dashboard-title">
-                IA Prática
-              </div>
+        <section
+            class="hero"
+            aria-labelledby="hero-title"
+        >
 
-              <div></div>
+            <div
+                class="hero-grid"
+                aria-hidden="true"
+            ></div>
+
+            <div
+                class="hero-glow hero-glow-left"
+                aria-hidden="true"
+            ></div>
+
+            <div
+                class="hero-glow hero-glow-right"
+                aria-hidden="true"
+            ></div>
+
+
+
+            <div class="container hero-content">
+
+
+                <!-- HERO TEXTO -->
+
+                <div class="hero-text">
+
+                    <div class="eyebrow">
+
+                        <span
+                            class="status-dot"
+                            aria-hidden="true"
+                        ></span>
+
+                        Inteligência artificial para negócios
+
+                    </div>
+
+
+                    <h1 id="hero-title">
+                        Faça o trabalho.
+                        <span>Não o prompt.</span>
+                    </h1>
+
+
+                    <p>
+                        Escolha o que você precisa fazer,
+                        responda algumas perguntas simples
+                        e deixe a IA Prática preparar uma
+                        base pronta para você usar, adaptar
+                        e ganhar tempo.
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="#ferramentas"
+                            class="button primary"
+                        >
+                            Explorar ferramentas
+
+                            <span aria-hidden="true">
+                                →
+                            </span>
+                        </a>
+
+
+                        <a
+                            href="#como-funciona"
+                            class="button secondary"
+                        >
+                            Como funciona
+                        </a>
+
+                    </div>
+
+
+                    <div
+                        class="hero-info"
+                        aria-label="Destaques da plataforma"
+                    >
+
+                        <div>
+                            <strong>4</strong>
+                            <span>categorias</span>
+                        </div>
+
+                        <div>
+                            <strong>100%</strong>
+                            <span>online</span>
+                        </div>
+
+                        <div>
+                            <strong>⚡</strong>
+                            <span>resultado rápido</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- HERO DASHBOARD -->
+
+                <div
+                    class="hero-card"
+                    aria-label="Prévia do painel IA Prática"
+                >
+
+
+                    <div class="floating-card top-card">
+
+                        <span
+                            class="floating-icon"
+                            aria-hidden="true"
+                        >
+                            🤖
+                        </span>
+
+                        <div>
+                            <strong>
+                                IA trabalhando
+                            </strong>
+
+                            <small>
+                                Preparando sua resposta...
+                            </small>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="hero-dashboard">
+
+
+                        <div class="dashboard-window-top">
+
+                            <div
+                                class="window-dots"
+                                aria-hidden="true"
+                            >
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+
+                            <span class="dashboard-brand">
+                                IA Prática
+                            </span>
+
+
+                            <span class="online">
+
+                                <i aria-hidden="true"></i>
+
+                                Online
+
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="dashboard-body">
+
+
+                            <div class="dashboard-intro">
+
+                                <span>
+                                    Olá 👋
+                                </span>
+
+                                <p class="dashboard-question">
+                                    O que você precisa fazer?
+                                </p>
+
+                            </div>
+
+
+
+                            <!-- Atendimento -->
+
+                            <button
+                                class="mini-option"
+                                type="button"
+                                onclick="openTool('atendimento')"
+                            >
+
+                                <span
+                                    class="mini-option-icon purple-bg"
+                                    aria-hidden="true"
+                                >
+                                    📱
+                                </span>
+
+                                <span class="mini-option-text">
+
+                                    <strong>
+                                        Responder cliente
+                                    </strong>
+
+                                    <small>
+                                        Crie uma resposta profissional
+                                    </small>
+
+                                </span>
+
+                                <b aria-hidden="true">
+                                    →
+                                </b>
+
+                            </button>
+
+
+
+                            <!-- Marketing -->
+
+                            <button
+                                class="mini-option"
+                                type="button"
+                                onclick="openTool('marketing')"
+                            >
+
+                                <span
+                                    class="mini-option-icon blue-bg"
+                                    aria-hidden="true"
+                                >
+                                    📢
+                                </span>
+
+                                <span class="mini-option-text">
+
+                                    <strong>
+                                        Criar conteúdo
+                                    </strong>
+
+                                    <small>
+                                        Posts, vídeos e legendas
+                                    </small>
+
+                                </span>
+
+                                <b aria-hidden="true">
+                                    →
+                                </b>
+
+                            </button>
+
+
+
+                            <!-- Gestão -->
+
+                            <button
+                                class="mini-option"
+                                type="button"
+                                onclick="openTool('gestao')"
+                            >
+
+                                <span
+                                    class="mini-option-icon green-bg"
+                                    aria-hidden="true"
+                                >
+                                    📊
+                                </span>
+
+                                <span class="mini-option-text">
+
+                                    <strong>
+                                        Analisar dados
+                                    </strong>
+
+                                    <small>
+                                        Encontre pontos importantes
+                                    </small>
+
+                                </span>
+
+                                <b aria-hidden="true">
+                                    →
+                                </b>
+
+                            </button>
+
+
+
+                            <!-- IA -->
+
+                            <button
+                                class="mini-option"
+                                type="button"
+                                onclick="openTool('ia')"
+                            >
+
+                                <span
+                                    class="mini-option-icon orange-bg"
+                                    aria-hidden="true"
+                                >
+                                    🤖
+                                </span>
+
+                                <span class="mini-option-text">
+
+                                    <strong>
+                                        Montar um prompt
+                                    </strong>
+
+                                    <small>
+                                        Use IA de forma mais organizada
+                                    </small>
+
+                                </span>
+
+                                <b aria-hidden="true">
+                                    →
+                                </b>
+
+                            </button>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="floating-card bottom-card">
+
+                        <span
+                            class="floating-check"
+                            aria-hidden="true"
+                        >
+                            ✓
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Pronto para copiar
+                            </strong>
+
+                            <small>
+                                Resultado gerado em segundos
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
 
             </div>
 
-            <div class="dashboard-content">
+        </section>
 
-              <div class="dashboard-sidebar">
 
-                <div class="sidebar-logo">
-                  IA
-                </div>
 
-                <div class="sidebar-item active"></div>
-                <div class="sidebar-item"></div>
-                <div class="sidebar-item"></div>
-                <div class="sidebar-item"></div>
+        <!-- ==================== FERRAMENTAS ==================== -->
 
-              </div>
+        <section
+            id="ferramentas"
+            class="tools-section section-space"
+        >
 
-              <div class="dashboard-main">
+            <div class="container">
 
-                <div class="dashboard-welcome">
-                  <div>
-                    <span>Olá 👋</span>
-                    <h3>O que vamos criar hoje?</h3>
-                  </div>
 
-                  <div class="status-online">
-                    <span></span>
-                    IA online
-                  </div>
-                </div>
-
-                <div class="dashboard-cards">
-
-                  <div class="mini-card purple">
-                    <div class="mini-icon">💬</div>
-                    <strong>Atendimento</strong>
-                    <span>Responder clientes</span>
-                  </div>
-
-                  <div class="mini-card blue">
-                    <div class="mini-icon">📢</div>
-                    <strong>Marketing</strong>
-                    <span>Criar conteúdo</span>
-                  </div>
-
-                  <div class="mini-card green">
-                    <div class="mini-icon">📊</div>
-                    <strong>Gestão</strong>
-                    <span>Analisar informações</span>
-                  </div>
-
-                </div>
-
-                <div class="ai-box">
-
-                  <div class="ai-box-header">
-                    <div class="ai-avatar">✦</div>
+                <div class="section-heading split-heading">
 
                     <div>
-                      <strong>Assistente IA</strong>
-                      <span>Pronto para ajudar</span>
-                    </div>
-                  </div>
 
-                  <div class="fake-input">
-                    Escreva o que você precisa...
-                    <button type="button">➜</button>
-                  </div>
+                        <span class="section-label">
+                            FERRAMENTAS
+                        </span>
+
+                        <h2>
+                            O que você precisa
+                            <span>fazer hoje?</span>
+                        </h2>
+
+                    </div>
+
+
+                    <p>
+                        Escolha uma categoria e transforme
+                        uma tarefa demorada em um processo
+                        simples e direto.
+                    </p>
 
                 </div>
 
-              </div>
+
+
+                <div class="tools-grid">
+
+
+                    <!-- ==================== ATENDIMENTO ==================== -->
+
+                    <button
+                        class="tool-card purple"
+                        type="button"
+                        onclick="openTool('atendimento')"
+                    >
+
+                        <div class="tool-card-top">
+
+                            <div
+                                class="tool-icon"
+                                aria-hidden="true"
+                            >
+                                📱
+                            </div>
+
+                            <span class="tool-number">
+                                01
+                            </span>
+
+                        </div>
+
+
+                        <div class="tool-content">
+
+                            <span class="tool-category">
+                                ATENDIMENTO
+                            </span>
+
+                            <h3>
+                                Falar com clientes
+                            </h3>
+
+                            <p>
+                                Crie respostas, mensagens de orçamento,
+                                reclamações e acompanhamentos.
+                            </p>
+
+                        </div>
+
+
+                        <div
+                            class="tool-features"
+                            aria-hidden="true"
+                        >
+
+                            <span>
+                                Respostas
+                            </span>
+
+                            <span>
+                                Orçamentos
+                            </span>
+
+                            <span>
+                                Follow-up
+                            </span>
+
+                        </div>
+
+
+                        <span class="tool-action">
+
+                            Abrir ferramenta
+
+                            <span class="arrow">
+                                →
+                            </span>
+
+                        </span>
+
+                    </button>
+
+
+
+                    <!-- ==================== MARKETING ==================== -->
+
+                    <button
+                        class="tool-card blue featured"
+                        type="button"
+                        onclick="openTool('marketing')"
+                    >
+
+                        <span class="featured-badge">
+                            POPULAR
+                        </span>
+
+
+                        <div class="tool-card-top">
+
+                            <div
+                                class="tool-icon"
+                                aria-hidden="true"
+                            >
+                                📢
+                            </div>
+
+                            <span class="tool-number">
+                                02
+                            </span>
+
+                        </div>
+
+
+                        <div class="tool-content">
+
+                            <span class="tool-category">
+                                MARKETING
+                            </span>
+
+                            <h3>
+                                Criar conteúdo
+                            </h3>
+
+                            <p>
+                                Gere ideias de posts, roteiros,
+                                legendas e planos de conteúdo
+                                para redes sociais.
+                            </p>
+
+                        </div>
+
+
+                        <div
+                            class="tool-features"
+                            aria-hidden="true"
+                        >
+
+                            <span>
+                                Posts
+                            </span>
+
+                            <span>
+                                Roteiros
+                            </span>
+
+                            <span>
+                                Legendas
+                            </span>
+
+                        </div>
+
+
+                        <span class="tool-action">
+
+                            Abrir ferramenta
+
+                            <span class="arrow">
+                                →
+                            </span>
+
+                        </span>
+
+                    </button>
+
+
+
+                    <!-- ==================== GESTÃO ==================== -->
+
+                    <button
+                        class="tool-card green"
+                        type="button"
+                        onclick="openTool('gestao')"
+                    >
+
+                        <div class="tool-card-top">
+
+                            <div
+                                class="tool-icon"
+                                aria-hidden="true"
+                            >
+                                📊
+                            </div>
+
+                            <span class="tool-number">
+                                03
+                            </span>
+
+                        </div>
+
+
+                        <div class="tool-content">
+
+                            <span class="tool-category">
+                                GESTÃO
+                            </span>
+
+                            <h3>
+                                Entender seus dados
+                            </h3>
+
+                            <p>
+                                Organize informações e encontre
+                                pontos de atenção e oportunidades
+                                no negócio.
+                            </p>
+
+                        </div>
+
+
+                        <div
+                            class="tool-features"
+                            aria-hidden="true"
+                        >
+
+                            <span>
+                                Resumo
+                            </span>
+
+                            <span>
+                                Vendas
+                            </span>
+
+                            <span>
+                                Insights
+                            </span>
+
+                        </div>
+
+
+                        <span class="tool-action">
+
+                            Abrir ferramenta
+
+                            <span class="arrow">
+                                →
+                            </span>
+
+                        </span>
+
+                    </button>
+
+
+
+                    <!-- ==================== IA ==================== -->
+
+                    <button
+                        class="tool-card orange"
+                        type="button"
+                        onclick="openTool('ia')"
+                    >
+
+                        <div class="tool-card-top">
+
+                            <div
+                                class="tool-icon"
+                                aria-hidden="true"
+                            >
+                                🤖
+                            </div>
+
+                            <span class="tool-number">
+                                04
+                            </span>
+
+                        </div>
+
+
+                        <div class="tool-content">
+
+                            <span class="tool-category">
+                                INTELIGÊNCIA ARTIFICIAL
+                            </span>
+
+                            <h3>
+                                Usar IA melhor
+                            </h3>
+
+                            <p>
+                                Crie comandos personalizados
+                                para suas tarefas e tenha uma
+                                base de prompt mais completa.
+                            </p>
+
+                        </div>
+
+
+                        <div
+                            class="tool-features"
+                            aria-hidden="true"
+                        >
+
+                            <span>
+                                Prompts
+                            </span>
+
+                            <span>
+                                Contexto
+                            </span>
+
+                            <span>
+                                Estrutura
+                            </span>
+
+                        </div>
+
+
+                        <span class="tool-action">
+
+                            Abrir ferramenta
+
+                            <span class="arrow">
+                                →
+                            </span>
+
+                        </span>
+
+                    </button>
+
+
+                </div>
 
             </div>
 
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
+        </section>
 
 
-    <!-- =========================
-         RECURSOS
-    ========================== -->
 
-    <section class="section" id="recursos">
+        <!-- ==================== BENEFÍCIOS ==================== -->
 
-      <div class="container">
+        <section
+            id="beneficios"
+            class="benefits-section section-space"
+        >
 
-        <div class="section-heading">
-
-          <span class="section-label">
-            Ferramentas
-          </span>
-
-          <h2>
-            Tudo que seu negócio precisa.
-            <span>Em um só lugar.</span>
-          </h2>
-
-          <p>
-            Escolha uma área e deixe a inteligência artificial
-            ajudar nas tarefas que mais consomem seu tempo.
-          </p>
-
-        </div>
+            <div class="container benefits-layout">
 
 
-        <div class="resource-grid">
+                <div class="benefits-copy">
 
-          <!-- ATENDIMENTO -->
+                    <span class="section-label">
+                        POR QUE USAR?
+                    </span>
 
-          <article class="resource-card">
 
-            <div class="resource-top">
+                    <h2>
+                        Menos tempo no repetitivo.
+                        <span>
+                            Mais foco no negócio.
+                        </span>
+                    </h2>
 
-              <div class="resource-icon atendimento">
-                💬
-              </div>
 
-              <span class="resource-number">
-                01
-              </span>
+                    <p class="benefits-description">
+                        A IA Prática organiza tarefas comuns
+                        em ferramentas simples. Você escolhe
+                        o objetivo, informa o contexto e recebe
+                        uma base pronta para continuar trabalhando.
+                    </p>
+
+
+
+                    <div class="benefits-list">
+
+
+                        <article class="benefit-item">
+
+                            <div
+                                class="benefit-icon"
+                                aria-hidden="true"
+                            >
+                                ⚡
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Ganhe velocidade
+                                </h3>
+
+                                <p>
+                                    Comece respostas, conteúdos
+                                    e análises sem partir de uma
+                                    página em branco.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <article class="benefit-item">
+
+                            <div
+                                class="benefit-icon"
+                                aria-hidden="true"
+                            >
+                                🎯
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Vá direto ao objetivo
+                                </h3>
+
+                                <p>
+                                    As perguntas mudam conforme
+                                    a tarefa para ajudar você a
+                                    fornecer o contexto certo.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <article class="benefit-item">
+
+                            <div
+                                class="benefit-icon"
+                                aria-hidden="true"
+                            >
+                                ✨
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Use sem complicação
+                                </h3>
+
+                                <p>
+                                    Você não precisa decorar
+                                    estruturas de prompt para começar.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- EXEMPLO DE RESULTADO -->
+
+                <div
+                    class="result-preview"
+                    aria-label="Exemplo de resultado"
+                >
+
+
+                    <div class="result-preview-top">
+
+                        <div>
+
+                            <span class="preview-kicker">
+                                RESULTADO GERADO
+                            </span>
+
+                            <strong>
+                                Resposta para cliente
+                            </strong>
+
+                        </div>
+
+
+                        <span class="preview-status">
+
+                            <i aria-hidden="true"></i>
+
+                            Pronto
+
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="preview-message">
+
+                        <div
+                            class="preview-avatar"
+                            aria-hidden="true"
+                        >
+                            ✦
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                IA PRÁTICA
+                            </span>
+
+                            <p>
+                                Olá! Tudo bem? Obrigado por
+                                entrar em contato. Separei as
+                                informações para te ajudar da
+                                melhor forma e posso ajustar a
+                                mensagem para o seu caso.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div
+                        class="preview-actions"
+                        aria-hidden="true"
+                    >
+
+                        <span>
+                            ▣ Copiar
+                        </span>
+
+                        <span>
+                            ↻ Gerar novamente
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="preview-glow"
+                        aria-hidden="true"
+                    ></div>
+
+
+                </div>
 
             </div>
 
-            <h3>Atendimento</h3>
-
-            <p>
-              Responda seus clientes de forma profissional,
-              rápida e personalizada.
-            </p>
-
-            <ul>
-              <li>
-                <span>✓</span>
-                Respostas para clientes
-              </li>
-
-              <li>
-                <span>✓</span>
-                Respostas para reclamações
-              </li>
-
-              <li>
-                <span>✓</span>
-                Mensagens de orçamento
-              </li>
-
-              <li>
-                <span>✓</span>
-                Mensagens de acompanhamento
-              </li>
-            </ul>
-
-            <a href="#cta" class="resource-link">
-              Usar Atendimento
-              <span>→</span>
-            </a>
-
-          </article>
+        </section>
 
 
-          <!-- MARKETING -->
 
-          <article class="resource-card featured">
+        <!-- ==================== COMO FUNCIONA ==================== -->
 
-            <div class="popular-tag">
-              Mais usado
-            </div>
+        <section
+            id="como-funciona"
+            class="how-section section-space"
+        >
 
-            <div class="resource-top">
-
-              <div class="resource-icon marketing">
-                📢
-              </div>
-
-              <span class="resource-number">
-                02
-              </span>
-
-            </div>
-
-            <h3>Marketing</h3>
-
-            <p>
-              Crie conteúdos para divulgar seu negócio
-              sem precisar começar do zero.
-            </p>
-
-            <ul>
-              <li>
-                <span>✓</span>
-                Ideias de posts
-              </li>
-
-              <li>
-                <span>✓</span>
-                Roteiros de vídeos
-              </li>
-
-              <li>
-                <span>✓</span>
-                Legendas para redes sociais
-              </li>
-
-              <li>
-                <span>✓</span>
-                Calendário de conteúdo
-              </li>
-            </ul>
-
-            <a href="#cta" class="resource-link">
-              Usar Marketing
-              <span>→</span>
-            </a>
-
-          </article>
+            <div class="container">
 
 
-          <!-- GESTÃO -->
+                <div class="section-heading centered">
 
-          <article class="resource-card">
-
-            <div class="resource-top">
-
-              <div class="resource-icon gestao">
-                📊
-              </div>
-
-              <span class="resource-number">
-                03
-              </span>
-
-            </div>
-
-            <h3>Gestão</h3>
-
-            <p>
-              Organize informações e transforme dados
-              do seu negócio em decisões mais claras.
-            </p>
-
-            <ul>
-              <li>
-                <span>✓</span>
-                Análise de vendas
-              </li>
-
-              <li>
-                <span>✓</span>
-                Organização de informações
-              </li>
-
-              <li>
-                <span>✓</span>
-                Criação de relatórios
-              </li>
-
-              <li>
-                <span>✓</span>
-                Resumo de dados
-              </li>
-            </ul>
-
-            <a href="#cta" class="resource-link">
-              Usar Gestão
-              <span>→</span>
-            </a>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
+                    <span class="section-label">
+                        COMO FUNCIONA
+                    </span>
 
 
-    <!-- =========================
-         BENEFÍCIOS
-    ========================== -->
+                    <h2>
+                        Menos complicação.
+                        <span>
+                            Mais resultado.
+                        </span>
+                    </h2>
 
-    <section class="section benefits-section" id="beneficios">
 
-      <div class="container benefits-container">
+                    <p>
+                        Você não precisa aprender a escrever
+                        prompts complicados. A plataforma
+                        guia o caminho.
+                    </p>
 
-        <div class="benefits-content">
+                </div>
 
-          <span class="section-label">
-            Por que usar?
-          </span>
 
-          <h2>
-            A IA cuidando do trabalho repetitivo.
-            <span>Você cuidando do crescimento.</span>
-          </h2>
 
-          <p>
-            O IA Prática foi pensado para pessoas que querem
-            aproveitar inteligência artificial sem precisar
-            aprender ferramentas complicadas.
-          </p>
+                <div class="steps">
 
-          <div class="benefit-list">
 
-            <div class="benefit-item">
+                    <article class="step">
 
-              <div class="benefit-icon">
-                ⚡
-              </div>
+                        <div class="step-number">
+                            01
+                        </div>
 
-              <div>
-                <h4>Economize tempo</h4>
-                <p>
-                  Produza textos, respostas e ideias em poucos segundos.
-                </p>
-              </div>
+                        <div
+                            class="step-icon"
+                            aria-hidden="true"
+                        >
+                            🎯
+                        </div>
+
+                        <h3>
+                            Escolha
+                        </h3>
+
+                        <p>
+                            Diga qual tarefa você precisa realizar.
+                        </p>
+
+                    </article>
+
+
+
+                    <div
+                        class="step-line"
+                        aria-hidden="true"
+                    ></div>
+
+
+
+                    <article class="step">
+
+                        <div class="step-number">
+                            02
+                        </div>
+
+                        <div
+                            class="step-icon"
+                            aria-hidden="true"
+                        >
+                            ✍️
+                        </div>
+
+                        <h3>
+                            Explique
+                        </h3>
+
+                        <p>
+                            Responda perguntas simples com
+                            o contexto do seu negócio.
+                        </p>
+
+                    </article>
+
+
+
+                    <div
+                        class="step-line"
+                        aria-hidden="true"
+                    ></div>
+
+
+
+                    <article class="step">
+
+                        <div class="step-number">
+                            03
+                        </div>
+
+                        <div
+                            class="step-icon"
+                            aria-hidden="true"
+                        >
+                            ✨
+                        </div>
+
+                        <h3>
+                            Receba
+                        </h3>
+
+                        <p>
+                            A ferramenta prepara um resultado
+                            que você pode copiar e adaptar.
+                        </p>
+
+                    </article>
+
+
+                </div>
 
             </div>
 
-            <div class="benefit-item">
+        </section>
 
-              <div class="benefit-icon">
-                ✦
-              </div>
 
-              <div>
-                <h4>Melhore sua comunicação</h4>
-                <p>
-                  Crie mensagens profissionais mantendo o estilo do seu negócio.
-                </p>
-              </div>
+
+        <!-- ==================== FAQ ==================== -->
+
+        <section
+            id="faq"
+            class="faq-section section-space"
+        >
+
+            <div class="container faq-layout">
+
+
+                <div class="faq-intro">
+
+                    <span class="section-label">
+                        DÚVIDAS
+                    </span>
+
+                    <h2>
+                        Perguntas frequentes.
+                    </h2>
+
+                    <p>
+                        O projeto está sendo construído por etapas.
+                        Esta versão já permite testar a experiência
+                        das ferramentas diretamente no navegador.
+                    </p>
+
+                </div>
+
+
+
+                <div class="faq-list">
+
+
+                    <details class="faq-item">
+
+                        <summary>
+
+                            Preciso entender de inteligência artificial?
+
+                            <span aria-hidden="true">
+                                +
+                            </span>
+
+                        </summary>
+
+                        <p>
+                            Não. A proposta é justamente transformar
+                            tarefas comuns em formulários simples,
+                            reduzindo a necessidade de criar prompts
+                            do zero.
+                        </p>
+
+                    </details>
+
+
+
+                    <details class="faq-item">
+
+                        <summary>
+
+                            As respostas já usam uma IA real?
+
+                            <span aria-hidden="true">
+                                +
+                            </span>
+
+                        </summary>
+
+                        <p>
+                            Nesta versão, os resultados são gerados
+                            localmente pelo próprio site. Isso permite
+                            testar o fluxo antes da integração com uma
+                            API de inteligência artificial.
+                        </p>
+
+                    </details>
+
+
+
+                    <details class="faq-item">
+
+                        <summary>
+
+                            Posso usar no celular?
+
+                            <span aria-hidden="true">
+                                +
+                            </span>
+
+                        </summary>
+
+                        <p>
+                            Sim. O layout foi preparado para telas
+                            menores e o modal das ferramentas se
+                            adapta ao celular.
+                        </p>
+
+                    </details>
+
+
+
+                    <details class="faq-item">
+
+                        <summary>
+
+                            O resultado pode ser editado?
+
+                            <span aria-hidden="true">
+                                +
+                            </span>
+
+                        </summary>
+
+                        <p>
+                            Sim. O objetivo é fornecer uma base.
+                            Você pode copiar o resultado e alterar
+                            qualquer trecho antes de usar.
+                        </p>
+
+                    </details>
+
+
+                </div>
 
             </div>
 
-            <div class="benefit-item">
+        </section>
 
-              <div class="benefit-icon">
-                📈
-              </div>
 
-              <div>
-                <h4>Organize melhor</h4>
-                <p>
-                  Transforme informações soltas em resumos e análises úteis.
-                </p>
-              </div>
+
+        <!-- ==================== CTA ==================== -->
+
+        <section class="cta-section section-space">
+
+            <div class="container">
+
+
+                <div class="cta">
+
+                    <div
+                        class="cta-decoration"
+                        aria-hidden="true"
+                    ></div>
+
+                    <div
+                        class="cta-grid"
+                        aria-hidden="true"
+                    ></div>
+
+
+                    <span class="section-label">
+                        PRONTO PARA COMEÇAR?
+                    </span>
+
+
+                    <h2>
+                        Seu próximo trabalho
+                        <span>
+                            pode começar aqui.
+                        </span>
+                    </h2>
+
+
+                    <p>
+                        Escolha uma ferramenta e teste agora
+                        a experiência da IA Prática.
+                    </p>
+
+
+                    <a
+                        href="#ferramentas"
+                        class="button white"
+                    >
+
+                        Explorar ferramentas
+
+                        <span aria-hidden="true">
+                            →
+                        </span>
+
+                    </a>
+
+                </div>
 
             </div>
 
-          </div>
-
-        </div>
+        </section>
 
 
-        <div class="benefits-panel">
+    </main>
 
-          <div class="panel-header">
-            <span>Resultado gerado</span>
 
-            <div class="panel-status">
-              <span></span>
-              Concluído
-            </div>
-          </div>
 
-          <div class="generated-message">
+    <!-- ==================== MODAL ==================== -->
 
-            <div class="generated-avatar">
-              ✦
-            </div>
+    <div
+        id="toolModal"
+        class="modal"
+        aria-hidden="true"
+    >
 
-            <div>
+        <div
+            class="modal-overlay"
+            onclick="closeTool()"
+        ></div>
 
-              <span class="generated-label">
-                IA PRÁTICA
-              </span>
 
-              <p>
-                Olá! Obrigado pelo seu interesse 😊
-                Preparamos uma proposta personalizada para você.
-                Posso te enviar os detalhes e valores?
-              </p>
 
-            </div>
+        <section
+            class="modal-box"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalTitle"
+            aria-describedby="modalDescription"
+        >
 
-          </div>
 
-          <div class="result-actions">
-
-            <button type="button">
-              📋 Copiar
+            <button
+                class="modal-close"
+                type="button"
+                onclick="closeTool()"
+                aria-label="Fechar ferramenta"
+            >
+                ×
             </button>
 
-            <button type="button">
-              ↻ Gerar novamente
-            </button>
-
-          </div>
-
-          <div class="panel-decoration decoration-one"></div>
-          <div class="panel-decoration decoration-two"></div>
-
-        </div>
-
-      </div>
-
-    </section>
 
 
-    <!-- =========================
-         COMO FUNCIONA
-    ========================== -->
+            <div class="modal-header">
 
-    <section class="section how-section" id="como-funciona">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <span class="section-label">
-            Como funciona
-          </span>
-
-          <h2>
-            Da sua necessidade ao resultado
-            <span>em três passos.</span>
-          </h2>
-
-        </div>
+                <div
+                    id="modalIcon"
+                    class="modal-icon"
+                    aria-hidden="true"
+                >
+                    🤖
+                </div>
 
 
-        <div class="steps">
+                <div>
 
-          <div class="step">
+                    <span
+                        id="modalCategory"
+                        class="section-label"
+                    >
+                        FERRAMENTA
+                    </span>
 
-            <div class="step-number">
-              01
+
+                    <h2 id="modalTitle">
+                        Ferramenta
+                    </h2>
+
+
+                    <p id="modalDescription">
+                        Preencha os campos abaixo.
+                    </p>
+
+                </div>
+
             </div>
 
-            <div class="step-icon">
-              👆
+
+
+            <form id="toolForm">
+
+                <div id="formFields"></div>
+
+
+                <button
+                    type="submit"
+                    class="generate-button"
+                >
+
+                    <span aria-hidden="true">
+                        ✨
+                    </span>
+
+                    Gerar resultado
+
+                </button>
+
+            </form>
+
+
+
+            <div
+                id="resultBox"
+                class="result-box"
+                aria-live="polite"
+            >
+
+                <div class="result-header">
+
+                    <span>
+                        ✨ Resultado
+                    </span>
+
+
+                    <button
+                        type="button"
+                        onclick="copyResult()"
+                        class="copy-button"
+                    >
+                        Copiar
+                    </button>
+
+                </div>
+
+
+                <pre id="resultContent"></pre>
+
             </div>
 
-            <h3>Escolha a ferramenta</h3>
-
-            <p>
-              Selecione Atendimento, Marketing ou Gestão
-              de acordo com o que você precisa.
-            </p>
-
-          </div>
-
-
-          <div class="step-line"></div>
-
-
-          <div class="step">
-
-            <div class="step-number">
-              02
-            </div>
-
-            <div class="step-icon">
-              ✍️
-            </div>
-
-            <h3>Conte o que precisa</h3>
-
-            <p>
-              Explique rapidamente sua situação.
-              Não precisa saber criar prompts complicados.
-            </p>
-
-          </div>
-
-
-          <div class="step-line"></div>
-
-
-          <div class="step">
-
-            <div class="step-number">
-              03
-            </div>
-
-            <div class="step-icon">
-              ✨
-            </div>
-
-            <h3>Receba o resultado</h3>
-
-            <p>
-              A inteligência artificial gera uma resposta
-              pronta para você usar e adaptar.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         DIFERENCIAL
-    ========================== -->
-
-    <section class="section simplicity-section">
-
-      <div class="container simplicity">
-
-        <div>
-
-          <span class="section-label">
-            Feito para ser simples
-          </span>
-
-          <h2>
-            Você não precisa ser especialista em inteligência artificial.
-          </h2>
-
-        </div>
-
-        <p>
-          Em vez de abrir uma IA e tentar descobrir o que escrever,
-          o IA Prática organiza as ferramentas de acordo com tarefas
-          reais de um pequeno negócio.
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         FAQ
-    ========================== -->
-
-    <section class="section faq-section" id="faq">
-
-      <div class="container faq-container">
-
-        <div class="faq-intro">
-
-          <span class="section-label">
-            Dúvidas
-          </span>
-
-          <h2>
-            Perguntas frequentes.
-          </h2>
-
-          <p>
-            Algumas respostas rápidas sobre como o IA Prática funciona.
-          </p>
-
-        </div>
-
-
-        <div class="faq-list">
-
-          <details class="faq-item">
-
-            <summary>
-              Preciso entender de inteligência artificial?
-              <span>+</span>
-            </summary>
-
-            <p>
-              Não. O objetivo do IA Prática é justamente facilitar o uso
-              da inteligência artificial para tarefas do dia a dia.
-            </p>
-
-          </details>
-
-
-          <details class="faq-item">
-
-            <summary>
-              O IA Prática serve para qualquer negócio?
-              <span>+</span>
-            </summary>
-
-            <p>
-              As ferramentas foram pensadas principalmente para pequenos
-              negócios, profissionais autônomos e pessoas que vendem
-              produtos ou serviços.
-            </p>
-
-          </details>
-
-
-          <details class="faq-item">
-
-            <summary>
-              Posso editar o conteúdo criado?
-              <span>+</span>
-            </summary>
-
-            <p>
-              Sim. O conteúdo gerado pode servir como base e ser ajustado
-              para combinar com o seu negócio.
-            </p>
-
-          </details>
-
-
-          <details class="faq-item">
-
-            <summary>
-              As ferramentas já estão funcionando?
-              <span>+</span>
-            </summary>
-
-            <p>
-              Esta versão apresenta a interface do projeto.
-              A integração com inteligência artificial será adicionada
-              na próxima etapa do desenvolvimento.
-            </p>
-
-          </details>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         CTA FINAL
-    ========================== -->
-
-    <section class="section cta-section" id="cta">
-
-      <div class="container">
-
-        <div class="cta-box">
-
-          <div class="cta-glow"></div>
-
-          <span class="cta-label">
-            IA PRÁTICA
-          </span>
-
-          <h2>
-            Seu próximo trabalho pode
-            <span>começar aqui.</span>
-          </h2>
-
-          <p>
-            Descubra como a inteligência artificial pode
-            simplificar tarefas do seu negócio.
-          </p>
-
-          <a href="#recursos" class="btn btn-primary btn-large">
-            Começar agora
-            <span>→</span>
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- =========================
-       FOOTER
-  ========================== -->
-
-  <footer class="footer">
-
-    <div class="container footer-container">
-
-      <div class="footer-brand">
-
-        <a href="#inicio" class="logo">
-
-          <div class="logo-icon">
-            IA
-          </div>
-
-          <div class="logo-text">
-            <strong>IA Prática</strong>
-            <span>Inteligência que trabalha com você</span>
-          </div>
-
-        </a>
-
-        <p>
-          Inteligência artificial simples,
-          prática e acessível para pequenos negócios.
-        </p>
-
-      </div>
-
-
-      <div class="footer-links">
-
-        <div>
-          <strong>Produto</strong>
-          <a href="#recursos">Recursos</a>
-          <a href="#beneficios">Benefícios</a>
-          <a href="#como-funciona">Como funciona</a>
-        </div>
-
-        <div>
-          <strong>Ajuda</strong>
-          <a href="#faq">FAQ</a>
-          <a href="#inicio">Início</a>
-        </div>
-
-      </div>
+        </section>
 
     </div>
 
 
-    <div class="container footer-bottom">
 
-      <p>
-        © 2026 IA Prática. Todos os direitos reservados.
-      </p>
+    <!-- ==================== TOAST ==================== -->
 
-      <p>
-        Desenvolvido para facilitar o seu dia a dia.
-      </p>
-
+    <div
+        id="toast"
+        class="toast"
+        role="status"
+        aria-live="polite"
+    >
+        Resultado copiado!
     </div>
 
-  </footer>
+
+
+    <!-- ==================== FOOTER ==================== -->
+
+    <footer class="footer">
+
+
+        <div class="container footer-content">
+
+
+            <div class="footer-brand">
+
+                <a
+                    href="#inicio"
+                    class="logo"
+                    aria-label="IA Prática - início"
+                >
+
+                    <span
+                        class="logo-icon"
+                        aria-hidden="true"
+                    >
+                        ✦
+                    </span>
+
+                    <span class="logo-name">
+                        IA <strong>Prática</strong>
+                    </span>
+
+                </a>
+
+
+                <p>
+                    Ferramentas inteligentes para simplificar
+                    tarefas de pequenos negócios.
+                </p>
+
+            </div>
+
+
+
+            <div class="footer-links">
+
+
+                <div>
+
+                    <strong>
+                        Produto
+                    </strong>
+
+                    <a href="#ferramentas">
+                        Ferramentas
+                    </a>
+
+                    <a href="#beneficios">
+                        Benefícios
+                    </a>
+
+                    <a href="#como-funciona">
+                        Como funciona
+                    </a>
+
+                </div>
+
+
+
+                <div>
+
+                    <strong>
+                        Ajuda
+                    </strong>
+
+                    <a href="#faq">
+                        FAQ
+                    </a>
+
+                    <a href="#inicio">
+                        Voltar ao topo
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <div class="container footer-bottom">
+
+            <span>
+                ©
+                <span id="currentYear">
+                    2026
+                </span>
+                IA Prática
+            </span>
+
+            <span>
+                MVP em desenvolvimento
+            </span>
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- ========================================================
+         JAVASCRIPT
+    ========================================================= -->
+
+
+    <script>
+
+
+        const tools = {
+
+
+            /* ==================== ATENDIMENTO ==================== */
+
+            atendimento: {
+
+                icon: "📱",
+
+                category: "ATENDIMENTO",
+
+                title: "Falar com clientes",
+
+                description:
+                    "Crie uma mensagem profissional em poucos segundos.",
+
+
+                fields: [
+
+                    {
+                        name: "tipo",
+
+                        label:
+                            "O que você precisa enviar?",
+
+                        type:
+                            "select",
+
+                        options: [
+                            "Resposta para cliente",
+                            "Resposta para reclamação",
+                            "Mensagem de orçamento",
+                            "Mensagem de acompanhamento"
+                        ]
+                    },
+
+
+                    {
+                        name: "negocio",
+
+                        label:
+                            "Qual é o seu negócio?",
+
+                        type:
+                            "text",
+
+                        placeholder:
+                            "Ex.: Loja de roupas"
+                    },
+
+
+                    {
+                        name: "situacao",
+
+                        label:
+                            "O que aconteceu?",
+
+                        type:
+                            "textarea",
+
+                        placeholder:
+                            "Explique brevemente a situação..."
+                    },
+
+
+                    {
+                        name: "tom",
+
+                        label:
+                            "Qual tom você deseja?",
+
+                        type:
+                            "select",
+
+                        options: [
+                            "Profissional",
+                            "Amigável",
+                            "Direto",
+                            "Elegante"
+                        ]
+                    }
+
+                ]
+
+            },
+
+
+
+            /* ==================== MARKETING ==================== */
+
+            marketing: {
+
+                icon:
+                    "📢",
+
+                category:
+                    "MARKETING",
+
+                title:
+                    "Criar conteúdo",
+
+                description:
+                    "Transforme uma ideia em conteúdo para suas redes.",
+
+
+                fields: [
+
+                    {
+                        name:
+                            "formato",
+
+                        label:
+                            "O que você quer criar?",
+
+                        type:
+                            "select",
+
+                        options: [
+                            "Ideia de post",
+                            "Roteiro para vídeo curto",
+                            "Legenda",
+                            "Calendário de conteúdo"
+                        ]
+                    },
+
+
+                    {
+                        name:
+                            "negocio",
+
+                        label:
+                            "Qual é o seu negócio?",
+
+                        type:
+                            "text",
+
+                        placeholder:
+                            "Ex.: Barbearia"
+                    },
+
+
+                    {
+                        name:
+                            "assunto",
+
+                        label:
+                            "Sobre o que será o conteúdo?",
+
+                        type:
+                            "text",
+
+                        placeholder:
+                            "Ex.: Corte masculino"
+                    },
+
+
+                    {
+                        name:
+                            "publico",
+
+                        label:
+                            "Quem você quer alcançar?",
+
+                        type:
+                            "text",
+
+                        placeholder:
+                            "Ex.: Homens de 18 a 35 anos"
+                    }
+
+                ]
+
+            },
+
+
+
+            /* ==================== GESTÃO ==================== */
+
+            gestao: {
+
+                icon:
+                    "📊",
+
+                category:
+                    "GESTÃO",
+
+                title:
+                    "Entender seus dados",
+
+                description:
+                    "Organize seus dados e encontre pontos importantes.",
+
+
+                fields: [
+
+                    {
+                        name:
+                            "objetivo",
+
+                        label:
+                            "O que você quer descobrir?",
+
+                        type:
+                            "select",
+
+                        options: [
+                            "Resumo geral",
+                            "Produtos/serviços com melhor desempenho",
+                            "Quedas nas vendas",
+                            "Oportunidades de melhoria"
+                        ]
+                    },
+
+
+                    {
+                        name:
+                            "periodo",
+
+                        label:
+                            "Qual é o período?",
+
+                        type:
+                            "text",
+
+                        placeholder:
+                            "Ex.: Janeiro a Março"
+                    },
+
+
+                    {
+                        name:
+                            "dados",
+
+                        label:
+                            "Cole seus dados aqui",
+
+                        type:
+                            "textarea",
+
+                        placeholder:
+                            "Ex.: Janeiro: R$ 5.000\nFevereiro: R$ 4.200\nMarço: R$ 6.100"
+                    }
+
+                ]
+
+            },
+
+
+
+            /* ==================== IA ==================== */
+
+            ia: {
+
+                icon:
+                    "🤖",
+
+                category:
+                    "IA",
+
+                title:
+                    "Usar IA melhor",
+
+                description:
+                    "Crie um comando personalizado para sua tarefa.",
+
+
+                fields: [
+
+                    {
+                        name:
+                            "tarefa",
+
+                        label:
+                            "O que você quer fazer?",
+
+                        type:
+                            "text",
+
+                        placeholder:
+                            "Ex.: Criar posts para minha loja"
+                    },
+
+
+                    {
+                        name:
+                            "contexto",
+
+                        label:
+                            "Explique o contexto",
+
+                        type:
+                            "textarea",
+
+                        placeholder:
+                            "Conte o que a IA precisa saber..."
+                    },
+
+
+                    {
+                        name:
+                            "nivel",
+
+                        label:
+                            "Seu nível com IA",
+
+                        type:
+                            "select",
+
+                        options: [
+                            "Iniciante",
+                            "Intermediário",
+                            "Avançado"
+                        ]
+                    }
+
+                ]
+
+            }
+
+        };
+
+
+
+        let currentTool = null;
+
+        let lastFocusedElement = null;
+
+
+
+        /* ========================================================
+           ABRIR FERRAMENTA
+        ========================================================= */
+
+        function openTool(toolName) {
+
+
+            currentTool = tools[toolName];
+
+
+            if (!currentTool) {
+                return;
+            }
+
+
+            lastFocusedElement =
+                document.activeElement;
+
+
+
+            document
+                .getElementById("modalIcon")
+                .textContent =
+                currentTool.icon;
+
+
+
+            document
+                .getElementById("modalCategory")
+                .textContent =
+                currentTool.category;
+
+
+
+            document
+                .getElementById("modalTitle")
+                .textContent =
+                currentTool.title;
+
+
+
+            document
+                .getElementById("modalDescription")
+                .textContent =
+                currentTool.description;
+
+
+
+            const fieldsContainer =
+                document.getElementById("formFields");
+
+
+            fieldsContainer.innerHTML = "";
+
+
+
+            currentTool.fields.forEach(
+                (field, index) => {
+
+
+                    const group =
+                        document.createElement("div");
+
+
+                    group.className =
+                        "form-group";
+
+
+
+                    const fieldId =
+                        `${toolName}-${field.name}-${index}`;
+
+
+
+                    const label =
+                        document.createElement("label");
+
+
+                    label.textContent =
+                        field.label;
+
+
+                    label.setAttribute(
+                        "for",
+                        fieldId
+                    );
+
+
+                    group.appendChild(label);
+
+
+
+                    let input;
+
+
+
+                    /* SELECT */
+
+                    if (field.type === "select") {
+
+
+                        input =
+                            document.createElement("select");
+
+
+
+                        const placeholder =
+                            document.createElement("option");
+
+
+                        placeholder.value =
+                            "";
+
+
+                        placeholder.textContent =
+                            "Selecione uma opção";
+
+
+                        placeholder.disabled =
+                            true;
+
+
+                        placeholder.selected =
+                            true;
+
+
+                        input.appendChild(
+                            placeholder
+                        );
+
+
+
+                        field.options.forEach(option => {
+
+
+                            const optionElement =
+                                document.createElement("option");
+
+
+                            optionElement.value =
+                                option;
+
+
+                            optionElement.textContent =
+                                option;
+
+
+                            input.appendChild(
+                                optionElement
+                            );
+
+
+                        });
+
+
+                    }
+
+
+
+                    /* TEXTAREA */
+
+                    else if (
+                        field.type === "textarea"
+                    ) {
+
+
+                        input =
+                            document.createElement("textarea");
+
+
+                        input.placeholder =
+                            field.placeholder || "";
+
+
+                        input.rows =
+                            5;
+
+
+                    }
+
+
+
+                    /* INPUT */
+
+                    else {
+
+
+                        input =
+                            document.createElement("input");
+
+
+                        input.type =
+                            "text";
+
+
+                        input.placeholder =
+                            field.placeholder || "";
+
+
+                    }
+
+
+
+                    input.id =
+                        fieldId;
+
+
+                    input.name =
+                        field.name;
+
+
+                    input.required =
+                        true;
+
+
+                    input.autocomplete =
+                        "off";
+
+
+
+                    group.appendChild(input);
+
+
+                    fieldsContainer.appendChild(
+                        group
+                    );
+
+
+                }
+            );
+
+
+
+            document
+                .getElementById("toolForm")
+                .reset();
+
+
+
+            document
+                .getElementById("resultContent")
+                .textContent =
+                "";
+
+
+
+            document
+                .getElementById("resultBox")
+                .classList
+                .remove("visible");
+
+
+
+            const modal =
+                document.getElementById("toolModal");
+
+
+            modal.classList.add(
+                "active"
+            );
+
+
+            modal.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+
+            document.body.classList.add(
+                "modal-open"
+            );
+
+
+
+            setTimeout(() => {
+
+
+                const firstField =
+                    document.querySelector(
+                        "#formFields input, #formFields select, #formFields textarea"
+                    );
+
+
+                if (firstField) {
+
+                    firstField.focus();
+
+                }
+
+
+            }, 80);
+
+
+        }
+
+
+
+        /* ========================================================
+           FECHAR FERRAMENTA
+        ========================================================= */
+
+        function closeTool() {
+
+
+            const modal =
+                document.getElementById(
+                    "toolModal"
+                );
+
+
+            modal.classList.remove(
+                "active"
+            );
+
+
+            modal.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+
+            document.body.classList.remove(
+                "modal-open"
+            );
+
+
+
+            if (
+                lastFocusedElement &&
+                typeof lastFocusedElement.focus ===
+                    "function"
+            ) {
+
+                lastFocusedElement.focus();
+
+            }
+
+
+        }
+
+
+
+        /* ========================================================
+           FORMULÁRIO
+        ========================================================= */
+
+        document
+            .getElementById("toolForm")
+            .addEventListener(
+                "submit",
+                function(event) {
+
+
+                    event.preventDefault();
+
+
+                    if (!currentTool) {
+                        return;
+                    }
+
+
+
+                    const data =
+                        new FormData(
+                            event.target
+                        );
+
+
+                    const values =
+                        {};
+
+
+
+                    data.forEach(
+                        (value, key) => {
+
+
+                            values[key] =
+                                String(value).trim();
+
+
+                        }
+                    );
+
+
+
+                    const generateButton =
+                        event.target.querySelector(
+                            ".generate-button"
+                        );
+
+
+                    const originalButtonText =
+                        generateButton.innerHTML;
+
+
+
+                    generateButton.disabled =
+                        true;
+
+
+
+                    generateButton.innerHTML =
+                        '<span class="button-loader" aria-hidden="true"></span> Gerando...';
+
+
+
+                    setTimeout(() => {
+
+
+                        const result =
+                            generateResult(
+                                currentTool.category,
+                                values
+                            );
+
+
+
+                        document
+                            .getElementById(
+                                "resultContent"
+                            )
+                            .textContent =
+                            result;
+
+
+
+                        document
+                            .getElementById(
+                                "resultBox"
+                            )
+                            .classList
+                            .add("visible");
+
+
+
+                        generateButton.disabled =
+                            false;
+
+
+
+                        generateButton.innerHTML =
+                            originalButtonText;
+
+
+
+                        document
+                            .getElementById(
+                                "resultBox"
+                            )
+                            .scrollIntoView({
+                                behavior:
+                                    "smooth",
+
+                                block:
+                                    "nearest"
+                            });
+
+
+                    }, 450);
+
+
+                }
+            );
+
+
+
+        /* ========================================================
+           ATENDIMENTO
+        ========================================================= */
+
+        function getGreetingByTone(tone) {
+
+
+            const greetings = {
+
+                "Profissional":
+                    "Olá! Tudo bem?",
+
+                "Amigável":
+                    "Oi! Tudo bem? 😊",
+
+                "Direto":
+                    "Olá!",
+
+                "Elegante":
+                    "Olá! Espero que esteja bem."
+
+            };
+
+
+            return (
+                greetings[tone] ||
+                "Olá! Tudo bem?"
+            );
+
+
+        }
+
+
+
+        function getClosingByTone(
+            tone,
+            business
+        ) {
+
+
+            const closings = {
+
+
+                "Profissional":
+
+`Se precisar de qualquer informação adicional, estamos à disposição.
+
+Atenciosamente,
+Equipe ${business}`,
+
+
+                "Amigável":
+
+`Se precisar de mais alguma coisa, pode chamar. Será um prazer ajudar! 😊
+
+Equipe ${business}`,
+
+
+                "Direto":
+
+`Ficamos à disposição para dar continuidade.
+
+Equipe ${business}`,
+
+
+                "Elegante":
+
+`Permanecemos à disposição para qualquer esclarecimento adicional.
+
+Cordialmente,
+Equipe ${business}`
+
+            };
+
+
+            return (
+                closings[tone] ||
+                closings["Profissional"]
+            );
+
+
+        }
+
+
+
+        function generateAttendance(values) {
+
+
+            const greeting =
+                getGreetingByTone(
+                    values.tom
+                );
+
+
+            const closing =
+                getClosingByTone(
+                    values.tom,
+                    values.negocio
+                );
+
+
+
+            const introductions = {
+
+
+                "Resposta para cliente":
+
+                    `Agradecemos por entrar em contato com a ${values.negocio}.`,
+
+
+                "Resposta para reclamação":
+
+                    `Agradecemos por nos contar o que aconteceu. Na ${values.negocio}, levamos esse tipo de situação a sério e queremos ajudar.`,
+
+
+                "Mensagem de orçamento":
+
+                    `Obrigado pelo interesse na ${values.negocio}. Preparamos esta mensagem para dar continuidade ao seu orçamento.`,
+
+
+                "Mensagem de acompanhamento":
+
+                    `Estamos entrando em contato para acompanhar seu atendimento com a ${values.negocio}.`
+
+            };
+
+
+
+            const resolution =
+
+                values.tipo ===
+                "Resposta para reclamação"
+
+                ?
+
+                "Queremos entender a melhor forma de resolver a situação e seguir com uma solução adequada para você."
+
+                :
+
+                "Vamos seguir com as informações acima e ajudar da forma mais clara possível.";
+
+
+
+            return `${greeting}
+
+${introductions[values.tipo] || introductions["Resposta para cliente"]}
+
+${values.situacao}
+
+${resolution}
+
+${closing}`;
+
+
+        }
+
+
+
+        /* ========================================================
+           MARKETING
+        ========================================================= */
+
+        function generateMarketing(values) {
+
+
+            const base = {
+
+                business:
+                    values.negocio,
+
+                subject:
+                    values.assunto,
+
+                audience:
+                    values.publico
+
+            };
+
+
+
+            /* IDEIA DE POST */
+
+            if (
+                values.formato ===
+                "Ideia de post"
+            ) {
+
+
+                return `📢 IDEIA DE POST
+
+NEGÓCIO: ${base.business}
+PÚBLICO: ${base.audience}
+TEMA: ${base.subject}
+
+IDEIA:
+
+Mostre um problema comum relacionado a "${base.subject}" e, em seguida, apresente como a ${base.business} pode ajudar.
+
+ESTRUTURA:
+
+1. Gancho: uma pergunta curta que chame atenção.
+
+2. Desenvolvimento: explique o problema em linguagem simples.
+
+3. Solução: apresente seu diferencial.
+
+4. CTA: convide a pessoa a enviar uma mensagem ou conhecer o serviço.
+
+EXEMPLO DE CTA:
+
+"Quer entender qual opção faz mais sentido para você? Fale com a ${base.business}."`;
+
+
+            }
+
+
+
+            /* ROTEIRO */
+
+            if (
+                values.formato ===
+                "Roteiro para vídeo curto"
+            ) {
+
+
+                return `🎬 ROTEIRO PARA VÍDEO CURTO
+
+NEGÓCIO: ${base.business}
+PÚBLICO: ${base.audience}
+TEMA: ${base.subject}
+
+0–3s — GANCHO:
+
+"Se você se interessa por ${base.subject}, presta atenção nisso."
+
+3–12s — CONTEXTO:
+
+Mostre rapidamente um problema ou dúvida comum do público ${base.audience}.
+
+12–22s — SOLUÇÃO:
+
+Explique como a ${base.business} resolve ou facilita essa situação.
+
+22–30s — CTA:
+
+"Quer saber mais? Mande uma mensagem para a ${base.business}."
+
+DICA:
+
+Use cortes rápidos, texto na tela e mostre o produto, serviço ou resultado sempre que possível.`;
+
+
+            }
+
+
+
+            /* LEGENDA */
+
+            if (
+                values.formato ===
+                "Legenda"
+            ) {
+
+
+                return `✍️ LEGENDA
+
+${base.subject} pode parecer um detalhe, mas pode fazer diferença para quem busca uma solução melhor.
+
+Na ${base.business}, nosso foco é tornar esse processo mais simples para ${base.audience}.
+
+Quer saber como funciona? Chame a gente e tire suas dúvidas.
+
+#${base.business.replace(/\s+/g, "")} #negocios #${base.subject.replace(/\s+/g, "")}`;
+
+
+            }
+
+
+
+            /* CALENDÁRIO */
+
+            return `🗓️ CALENDÁRIO DE CONTEÚDO — 7 DIAS
+
+NEGÓCIO: ${base.business}
+PÚBLICO: ${base.audience}
+TEMA CENTRAL: ${base.subject}
+
+DIA 1 — Dica rápida sobre ${base.subject}
+
+DIA 2 — Bastidores da ${base.business}
+
+DIA 3 — Erro comum do público e como evitar
+
+DIA 4 — Pergunta frequente + resposta curta
+
+DIA 5 — Demonstração de produto, serviço ou processo
+
+DIA 6 — Prova social, resultado ou depoimento
+
+DIA 7 — Oferta, convite ou CTA direto
+
+DICA:
+
+Alterne formatos entre Story, Reel e publicação para reaproveitar as ideias.`;
+
+
+        }
+
+
+
+        /* ========================================================
+           GESTÃO
+        ========================================================= */
+
+        function parseBusinessNumbers(text) {
+
+
+            const lines =
+                text
+                    .split(/\n+/)
+                    .map(
+                        line =>
+                            line.trim()
+                    )
+                    .filter(Boolean);
+
+
+
+            const entries =
+                [];
+
+
+
+            lines.forEach(line => {
+
+
+                const matches =
+                    line.match(
+                        /-?\d[\d.]*([,]\d+)?/g
+                    );
+
+
+                if (
+                    !matches ||
+                    !matches.length
+                ) {
+                    return;
+                }
+
+
+
+                const raw =
+                    matches[
+                        matches.length - 1
+                    ];
+
+
+
+                const normalized =
+                    raw
+                        .replace(
+                            /\.(?=\d{3}(?:\D|$))/g,
+                            ""
+                        )
+                        .replace(
+                            ",",
+                            "."
+                        );
+
+
+
+                const value =
+                    Number(normalized);
+
+
+
+                if (
+                    Number.isFinite(value)
+                ) {
+
+
+                    entries.push({
+
+                        label:
+                            line,
+
+                        value:
+                            value
+
+                    });
+
+
+                }
+
+
+            });
+
+
+
+            return entries;
+
+
+        }
+
+
+
+        function generateManagement(values) {
+
+
+            const entries =
+                parseBusinessNumbers(
+                    values.dados
+                );
+
+
+            let automaticInsight =
+                "";
+
+
+
+            if (
+                entries.length >= 2
+            ) {
+
+
+                const highest =
+                    entries.reduce(
+                        (a, b) =>
+                            b.value > a.value
+                                ? b
+                                : a
+                    );
+
+
+
+                const lowest =
+                    entries.reduce(
+                        (a, b) =>
+                            b.value < a.value
+                                ? b
+                                : a
+                    );
+
+
+
+                const total =
+                    entries.reduce(
+                        (sum, item) =>
+                            sum + item.value,
+                        0
+                    );
+
+
+
+                const average =
+                    total /
+                    entries.length;
+
+
+
+                automaticInsight =
+`
+
+LEITURA AUTOMÁTICA DOS NÚMEROS:
+
+• Maior valor identificado: ${highest.label}
+
+• Menor valor identificado: ${lowest.label}
+
+• Média dos ${entries.length} valores reconhecidos: ${average.toLocaleString(
+                    "pt-BR",
+                    {
+                        maximumFractionDigits: 2
+                    }
+                )}
+`;
+
+
+            }
+
+
+
+            return `📊 ANÁLISE INICIAL
+
+OBJETIVO:
+
+${values.objetivo}
+
+PERÍODO:
+
+${values.periodo}
+
+DADOS INFORMADOS:
+
+${values.dados}
+
+${automaticInsight}
+
+PONTOS PARA OBSERVAR:
+
+1. Compare os resultados entre os períodos ou categorias.
+
+2. Identifique aumentos, quedas e valores fora do padrão.
+
+3. Procure fatores que possam explicar as mudanças.
+
+4. Verifique onde há concentração de resultado.
+
+5. Escolha uma ação prática para testar e acompanhe o próximo período.
+
+⚠️ Esta é uma leitura local e inicial. Uma integração futura com IA poderá interpretar contexto, tendências e relações com mais profundidade.`;
+
+
+        }
+
+
+
+        /* ========================================================
+           CRIADOR DE PROMPTS
+        ========================================================= */
+
+        function generatePrompt(values) {
+
+
+            const detailByLevel = {
+
+
+                "Iniciante":
+
+                    "Use linguagem simples, explique termos e apresente exemplos fáceis de aplicar.",
+
+
+                "Intermediário":
+
+                    "Seja objetivo, mas inclua alternativas, critérios e exemplos práticos.",
+
+
+                "Avançado":
+
+                    "Aprofunde a análise, explicite premissas, trade-offs, limitações e possíveis otimizações."
+
+            };
+
+
+
+            return `🤖 COMANDO PERSONALIZADO
+
+Copie o comando abaixo e use em uma ferramenta de IA:
+
+Você é um especialista em ${values.tarefa}.
+
+CONTEXTO:
+
+${values.contexto}
+
+TAREFA:
+
+${values.tarefa}
+
+INSTRUÇÕES:
+
+- Considere cuidadosamente todo o contexto antes de responder.
+
+- Organize a resposta em etapas claras.
+
+- Inclua exemplos sempre que forem úteis.
+
+- Aponte informações que estejam faltando e que possam alterar a qualidade da resposta.
+
+- Evite inventar dados que não foram fornecidos.
+
+- ${detailByLevel[values.nivel] || detailByLevel["Iniciante"]}
+
+FORMATO DE SAÍDA:
+
+1. Resumo da solução.
+
+2. Passos recomendados.
+
+3. Exemplo aplicado ao contexto.
+
+4. Próxima ação sugerida.
+
+Nível selecionado: ${values.nivel}`;
+
+
+        }
+
+
+
+        /* ========================================================
+           ESCOLHER GERADOR
+        ========================================================= */
+
+        function generateResult(
+            category,
+            values
+        ) {
+
+
+            if (
+                category ===
+                "ATENDIMENTO"
+            ) {
+
+                return generateAttendance(
+                    values
+                );
+
+            }
+
+
+
+            if (
+                category ===
+                "MARKETING"
+            ) {
+
+                return generateMarketing(
+                    values
+                );
+
+            }
+
+
+
+            if (
+                category ===
+                "GESTÃO"
+            ) {
+
+                return generateManagement(
+                    values
+                );
+
+            }
+
+
+
+            if (
+                category ===
+                "IA"
+            ) {
+
+                return generatePrompt(
+                    values
+                );
+
+            }
+
+
+
+            return "Não foi possível gerar o resultado.";
+
+
+        }
+
+
+
+        /* ========================================================
+           COPIAR RESULTADO
+        ========================================================= */
+
+        async function copyResult() {
+
+
+            const result =
+                document
+                    .getElementById(
+                        "resultContent"
+                    )
+                    .textContent;
+
+
+
+            const button =
+                document.querySelector(
+                    ".copy-button"
+                );
+
+
+
+            if (
+                !result.trim()
+            ) {
+
+                return;
+
+            }
+
+
+
+            try {
+
+
+                await navigator
+                    .clipboard
+                    .writeText(
+                        result
+                    );
+
+
+            }
+
+            catch (error) {
+
+
+                const textarea =
+                    document.createElement(
+                        "textarea"
+                    );
+
+
+                textarea.value =
+                    result;
+
+
+                textarea.style.position =
+                    "fixed";
+
+
+                textarea.style.opacity =
+                    "0";
+
+
+                document.body.appendChild(
+                    textarea
+                );
+
+
+                textarea.select();
+
+
+                document.execCommand(
+                    "copy"
+                );
+
+
+                textarea.remove();
+
+
+            }
+
+
+
+            const originalText =
+                button.textContent;
+
+
+
+            button.textContent =
+                "Copiado!";
+
+
+
+            showToast(
+                "Resultado copiado!"
+            );
+
+
+
+            setTimeout(() => {
+
+
+                button.textContent =
+                    originalText;
+
+
+            }, 1800);
+
+
+        }
+
+
+
+        /* ========================================================
+           TOAST
+        ========================================================= */
+
+        function showToast(message) {
+
+
+            const toast =
+                document.getElementById(
+                    "toast"
+                );
+
+
+            toast.textContent =
+                message;
+
+
+            toast.classList.add(
+                "visible"
+            );
+
+
+
+            clearTimeout(
+                showToast.timeout
+            );
+
+
+
+            showToast.timeout =
+                setTimeout(() => {
+
+
+                    toast.classList.remove(
+                        "visible"
+                    );
+
+
+                }, 2200);
+
+
+        }
+
+
+
+        /* ========================================================
+           ESC FECHA MODAL
+        ========================================================= */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+
+                if (
+                    event.key === "Escape" &&
+                    document
+                        .getElementById(
+                            "toolModal"
+                        )
+                        .classList
+                        .contains(
+                            "active"
+                        )
+                ) {
+
+
+                    closeTool();
+
+
+                }
+
+
+            }
+        );
+
+
+
+        /* ========================================================
+           FAQ — ABRIR APENAS UM
+        ========================================================= */
+
+        document
+            .querySelectorAll(
+                ".faq-item"
+            )
+            .forEach(item => {
+
+
+                item.addEventListener(
+                    "toggle",
+                    () => {
+
+
+                        if (!item.open) {
+                            return;
+                        }
+
+
+                        document
+                            .querySelectorAll(
+                                ".faq-item"
+                            )
+                            .forEach(
+                                otherItem => {
+
+
+                                    if (
+                                        otherItem !==
+                                        item
+                                    ) {
+
+                                        otherItem.open =
+                                            false;
+
+                                    }
+
+
+                                }
+                            );
+
+
+                    }
+                );
+
+
+            });
+
+
+
+        /* ========================================================
+           ANO AUTOMÁTICO
+        ========================================================= */
+
+        document
+            .getElementById(
+                "currentYear"
+            )
+            .textContent =
+            new Date().getFullYear();
+
+
+    </script>
+
 
 </body>
 </html>
