@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -28,13 +29,11 @@
         Dashboard — IA Prática
     </title>
 
-    <!-- Seu CSS atual -->
     <link
         rel="stylesheet"
         href="./style.css"
     >
 
-    <!-- CSS exclusivo do dashboard -->
     <link
         rel="stylesheet"
         href="./dashboard.css"
@@ -47,7 +46,7 @@
 
 
     <!-- =========================================
-         SIDEBAR MOBILE OVERLAY
+         OVERLAY MOBILE
     ========================================== -->
 
     <div
@@ -94,9 +93,11 @@
                     class="sidebar-mobile-close"
                     type="button"
                     onclick="closeSidebar()"
+                    aria-label="Fechar menu"
                 >
                     ×
                 </button>
+
 
             </div>
 
@@ -111,11 +112,12 @@
             <nav class="sidebar-nav">
 
 
+                <!-- INÍCIO -->
+
                 <button
                     class="sidebar-item active"
                     type="button"
-                    data-section="inicio"
-                    onclick="showSection('inicio', this)"
+                    onclick="showHome(this)"
                 >
 
                     <span class="sidebar-item-icon">
@@ -130,10 +132,11 @@
 
 
 
-                <button
+                <!-- ATENDIMENTO -->
+
+                <a
+                    href="./atendimento.html"
                     class="sidebar-item"
-                    type="button"
-                    onclick="openTool('atendimento')"
                 >
 
                     <span class="sidebar-item-icon purple-soft">
@@ -144,9 +147,11 @@
                         Atendimento
                     </span>
 
-                </button>
+                </a>
 
 
+
+                <!-- MARKETING -->
 
                 <button
                     class="sidebar-item"
@@ -166,6 +171,8 @@
 
 
 
+                <!-- GESTÃO -->
+
                 <button
                     class="sidebar-item"
                     type="button"
@@ -183,6 +190,8 @@
                 </button>
 
 
+
+                <!-- IA -->
 
                 <button
                     class="sidebar-item"
@@ -286,7 +295,7 @@
 
 
         <!-- =========================================
-             CONTEÚDO
+             CONTEÚDO PRINCIPAL
         ========================================== -->
 
         <main class="dashboard-main">
@@ -341,6 +350,7 @@
                     </div>
 
 
+
                     <button
                         class="profile-button"
                         type="button"
@@ -349,6 +359,7 @@
                         <span class="profile-avatar">
                             M
                         </span>
+
 
                         <span class="profile-info">
 
@@ -361,6 +372,7 @@
                             </small>
 
                         </span>
+
 
                     </button>
 
@@ -376,13 +388,12 @@
                  HOME
             ====================================== -->
 
-            <section
-                id="section-inicio"
-                class="dashboard-section active"
-            >
+            <section class="dashboard-section active">
 
 
-                <!-- BOAS VINDAS -->
+                <!-- =================================
+                     BOAS-VINDAS
+                ================================== -->
 
                 <div class="dashboard-welcome">
 
@@ -400,10 +411,13 @@
 
 
                         <h2>
+
                             Olá 👋
+
                             <span>
                                 O que vamos criar hoje?
                             </span>
+
                         </h2>
 
 
@@ -418,10 +432,9 @@
 
 
 
-                    <button
-                        type="button"
+                    <a
+                        href="./atendimento.html"
                         class="new-task-button"
-                        onclick="openTool('atendimento')"
                     >
 
                         <span>
@@ -430,21 +443,22 @@
 
                         Nova tarefa
 
-                    </button>
+                    </a>
 
 
                 </div>
 
 
 
-                <!-- =====================================
+                <!-- =================================
                      FERRAMENTAS
-                ====================================== -->
+                ================================== -->
 
                 <div class="dashboard-block">
 
 
                     <div class="dashboard-block-heading">
+
 
                         <div>
 
@@ -463,6 +477,7 @@
                             4 ferramentas disponíveis
                         </small>
 
+
                     </div>
 
 
@@ -470,12 +485,13 @@
                     <div class="dashboard-tools-grid">
 
 
-                        <!-- ATENDIMENTO -->
+                        <!-- =============================
+                             ATENDIMENTO
+                        ============================== -->
 
-                        <button
+                        <a
+                            href="./atendimento.html"
                             class="dashboard-tool-card tool-purple"
-                            type="button"
-                            onclick="openTool('atendimento')"
                         >
 
 
@@ -490,6 +506,7 @@
                                 </span>
 
                             </div>
+
 
 
                             <div>
@@ -510,6 +527,7 @@
                             </div>
 
 
+
                             <div class="dashboard-tool-tags">
 
                                 <span>
@@ -523,11 +541,13 @@
                             </div>
 
 
-                        </button>
+                        </a>
 
 
 
-                        <!-- MARKETING -->
+                        <!-- =============================
+                             MARKETING
+                        ============================== -->
 
                         <button
                             class="dashboard-tool-card tool-blue"
@@ -554,6 +574,7 @@
                             </div>
 
 
+
                             <div>
 
                                 <span class="dashboard-tool-category">
@@ -570,6 +591,7 @@
                                 </p>
 
                             </div>
+
 
 
                             <div class="dashboard-tool-tags">
@@ -589,7 +611,9 @@
 
 
 
-                        <!-- GESTÃO -->
+                        <!-- =============================
+                             GESTÃO
+                        ============================== -->
 
                         <button
                             class="dashboard-tool-card tool-green"
@@ -611,6 +635,7 @@
                             </div>
 
 
+
                             <div>
 
                                 <span class="dashboard-tool-category">
@@ -627,6 +652,7 @@
                                 </p>
 
                             </div>
+
 
 
                             <div class="dashboard-tool-tags">
@@ -646,7 +672,9 @@
 
 
 
-                        <!-- IA -->
+                        <!-- =============================
+                             IA
+                        ============================== -->
 
                         <button
                             class="dashboard-tool-card tool-orange"
@@ -668,6 +696,7 @@
                             </div>
 
 
+
                             <div>
 
                                 <span class="dashboard-tool-category">
@@ -684,6 +713,7 @@
                                 </p>
 
                             </div>
+
 
 
                             <div class="dashboard-tool-tags">
@@ -709,9 +739,9 @@
 
 
 
-                <!-- =====================================
-                     ÁREA INFERIOR
-                ====================================== -->
+                <!-- =================================
+                     PARTE INFERIOR
+                ================================== -->
 
                 <div class="dashboard-bottom-grid">
 
@@ -722,6 +752,7 @@
 
 
                         <div class="dashboard-panel-header">
+
 
                             <div>
 
@@ -735,6 +766,7 @@
 
                             </div>
 
+
                         </div>
 
 
@@ -742,14 +774,17 @@
                         <div class="quick-actions">
 
 
-                            <button
-                                type="button"
-                                onclick="openTool('atendimento')"
+                            <!-- ATENDIMENTO -->
+
+                            <a
+                                href="./atendimento.html"
+                                class="quick-action-link"
                             >
 
                                 <span class="quick-icon purple-soft">
                                     💬
                                 </span>
+
 
                                 <span>
 
@@ -763,13 +798,17 @@
 
                                 </span>
 
+
                                 <b>
                                     →
                                 </b>
 
-                            </button>
+
+                            </a>
 
 
+
+                            <!-- MARKETING -->
 
                             <button
                                 type="button"
@@ -779,6 +818,7 @@
                                 <span class="quick-icon blue-soft">
                                     📱
                                 </span>
+
 
                                 <span>
 
@@ -792,13 +832,17 @@
 
                                 </span>
 
+
                                 <b>
                                     →
                                 </b>
 
+
                             </button>
 
 
+
+                            <!-- GESTÃO -->
 
                             <button
                                 type="button"
@@ -808,6 +852,7 @@
                                 <span class="quick-icon green-soft">
                                     📈
                                 </span>
+
 
                                 <span>
 
@@ -821,13 +866,17 @@
 
                                 </span>
 
+
                                 <b>
                                     →
                                 </b>
 
+
                             </button>
 
 
+
+                            <!-- IA -->
 
                             <button
                                 type="button"
@@ -837,6 +886,7 @@
                                 <span class="quick-icon orange-soft">
                                     ✨
                                 </span>
+
 
                                 <span>
 
@@ -850,9 +900,11 @@
 
                                 </span>
 
+
                                 <b>
                                     →
                                 </b>
+
 
                             </button>
 
@@ -864,12 +916,15 @@
 
 
 
-                    <!-- HISTÓRICO -->
+                    <!-- =================================
+                         HISTÓRICO
+                    ================================== -->
 
                     <section class="dashboard-panel">
 
 
                         <div class="dashboard-panel-header">
+
 
                             <div>
 
@@ -941,7 +996,7 @@
 
 
     <!-- =========================================
-         MODAL FERRAMENTA
+         MODAL
     ========================================== -->
 
     <div
@@ -966,6 +1021,7 @@
 
                 <div class="modal-title-area">
 
+
                     <span
                         id="modalToolIcon"
                         class="modal-tool-icon"
@@ -974,7 +1030,9 @@
                     </span>
 
 
+
                     <div>
+
 
                         <span
                             id="modalToolCategory"
@@ -983,13 +1041,16 @@
                             FERRAMENTA
                         </span>
 
+
                         <h2 id="modalToolTitle">
                             Nova tarefa
                         </h2>
 
+
                         <p id="modalToolDescription">
                             Informe os dados abaixo.
                         </p>
+
 
                     </div>
 
@@ -1002,6 +1063,7 @@
                     class="dashboard-modal-close"
                     type="button"
                     onclick="closeTool()"
+                    aria-label="Fechar"
                 >
                     ×
                 </button>
@@ -1047,6 +1109,7 @@
 
                 <div class="dashboard-result-header">
 
+
                     <span>
                         ✦ Resultado
                     </span>
@@ -1059,7 +1122,9 @@
                         Copiar
                     </button>
 
+
                 </div>
+
 
 
                 <pre id="dashboardResultText"></pre>
@@ -1088,94 +1153,18 @@
 
 
 
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
     <script>
 
 
         /* =========================================
-           CONFIGURAÇÃO DAS FERRAMENTAS
+           FERRAMENTAS DO DASHBOARD
         ========================================== */
 
-
         const dashboardTools = {
-
-
-            atendimento: {
-
-                icon: "💬",
-
-                category: "ATENDIMENTO",
-
-                title: "Falar com clientes",
-
-                description:
-                    "Crie uma mensagem profissional para seu cliente.",
-
-                fields: [
-
-                    {
-                        name: "tipo",
-
-                        label:
-                            "O que você precisa enviar?",
-
-                        type:
-                            "select",
-
-                        options: [
-                            "Resposta para cliente",
-                            "Resposta para reclamação",
-                            "Mensagem de orçamento",
-                            "Mensagem de acompanhamento"
-                        ]
-                    },
-
-                    {
-                        name: "negocio",
-
-                        label:
-                            "Qual é o seu negócio?",
-
-                        type:
-                            "text",
-
-                        placeholder:
-                            "Ex.: Loja de ferramentas"
-                    },
-
-                    {
-                        name: "situacao",
-
-                        label:
-                            "Explique a situação",
-
-                        type:
-                            "textarea",
-
-                        placeholder:
-                            "Conte brevemente o que aconteceu..."
-                    },
-
-                    {
-                        name: "tom",
-
-                        label:
-                            "Qual tom você deseja?",
-
-                        type:
-                            "select",
-
-                        options: [
-                            "Profissional",
-                            "Amigável",
-                            "Direto",
-                            "Elegante"
-                        ]
-                    }
-
-                ]
-
-            },
-
 
 
             marketing: {
@@ -1192,9 +1181,11 @@
                 description:
                     "Crie ideias e conteúdos para suas redes sociais.",
 
+
                 fields: [
 
                     {
+
                         name:
                             "formato",
 
@@ -1205,14 +1196,22 @@
                             "select",
 
                         options: [
+
                             "Ideia de post",
+
                             "Legenda",
+
                             "Roteiro para vídeo",
+
                             "Calendário de conteúdo"
+
                         ]
+
                     },
 
+
                     {
+
                         name:
                             "negocio",
 
@@ -1224,9 +1223,12 @@
 
                         placeholder:
                             "Ex.: Loja de roupas"
+
                     },
 
+
                     {
+
                         name:
                             "assunto",
 
@@ -1238,9 +1240,12 @@
 
                         placeholder:
                             "Ex.: Nova coleção"
+
                     },
 
+
                     {
+
                         name:
                             "publico",
 
@@ -1252,6 +1257,7 @@
 
                         placeholder:
                             "Ex.: Pessoas entre 18 e 35 anos"
+
                     }
 
                 ]
@@ -1274,9 +1280,11 @@
                 description:
                     "Organize informações e identifique pontos importantes.",
 
+
                 fields: [
 
                     {
+
                         name:
                             "objetivo",
 
@@ -1287,14 +1295,22 @@
                             "select",
 
                         options: [
+
                             "Resumo geral",
+
                             "Melhores resultados",
+
                             "Quedas nas vendas",
+
                             "Oportunidades de melhoria"
+
                         ]
+
                     },
 
+
                     {
+
                         name:
                             "periodo",
 
@@ -1306,9 +1322,12 @@
 
                         placeholder:
                             "Ex.: Janeiro a Março"
+
                     },
 
+
                     {
+
                         name:
                             "dados",
 
@@ -1320,6 +1339,7 @@
 
                         placeholder:
                             "Ex.: Janeiro R$ 5.000, Fevereiro R$ 6.000..."
+
                     }
 
                 ]
@@ -1342,9 +1362,11 @@
                 description:
                     "Monte um comando estruturado para sua tarefa.",
 
+
                 fields: [
 
                     {
+
                         name:
                             "tarefa",
 
@@ -1356,9 +1378,12 @@
 
                         placeholder:
                             "Ex.: Criar uma campanha para meu produto"
+
                     },
 
+
                     {
+
                         name:
                             "contexto",
 
@@ -1370,9 +1395,12 @@
 
                         placeholder:
                             "Informe os detalhes importantes..."
+
                     },
 
+
                     {
+
                         name:
                             "nivel",
 
@@ -1383,10 +1411,15 @@
                             "select",
 
                         options: [
+
                             "Simples",
+
                             "Completo",
+
                             "Avançado"
+
                         ]
+
                     }
 
                 ]
@@ -1397,7 +1430,8 @@
 
 
 
-        let currentDashboardTool = null;
+        let currentDashboardTool =
+            null;
 
 
 
@@ -1405,19 +1439,28 @@
            SIDEBAR
         ========================================== */
 
-
         function openSidebar() {
 
+
             document
-                .getElementById("sidebar")
+                .getElementById(
+                    "sidebar"
+                )
                 .classList
-                .add("open");
+                .add(
+                    "open"
+                );
 
 
             document
-                .getElementById("sidebarOverlay")
+                .getElementById(
+                    "sidebarOverlay"
+                )
                 .classList
-                .add("active");
+                .add(
+                    "active"
+                );
+
 
         }
 
@@ -1425,58 +1468,89 @@
 
         function closeSidebar() {
 
+
             document
-                .getElementById("sidebar")
+                .getElementById(
+                    "sidebar"
+                )
                 .classList
-                .remove("open");
+                .remove(
+                    "open"
+                );
 
 
             document
-                .getElementById("sidebarOverlay")
+                .getElementById(
+                    "sidebarOverlay"
+                )
                 .classList
-                .remove("active");
+                .remove(
+                    "active"
+                );
+
 
         }
 
 
 
-        function showSection(section, element) {
+        function showHome(element) {
+
 
             document
-                .querySelectorAll(".sidebar-item")
-                .forEach(item => {
+                .querySelectorAll(
+                    ".sidebar-item"
+                )
+                .forEach(
+                    item => {
 
-                    item.classList.remove("active");
 
-                });
+                        item
+                            .classList
+                            .remove(
+                                "active"
+                            );
+
+
+                    }
+                );
 
 
             if (element) {
 
-                element.classList.add("active");
+
+                element
+                    .classList
+                    .add(
+                        "active"
+                    );
+
 
             }
 
 
             closeSidebar();
 
+
         }
 
 
 
         /* =========================================
-           ABRIR FERRAMENTA
+           ABRIR TOOL
         ========================================== */
-
 
         function openTool(toolName) {
 
 
             currentDashboardTool =
-                dashboardTools[toolName];
+                dashboardTools[
+                    toolName
+                ];
 
 
-            if (!currentDashboardTool) {
+            if (
+                !currentDashboardTool
+            ) {
 
                 return;
 
@@ -1488,25 +1562,36 @@
 
 
             document
-                .getElementById("modalToolIcon")
+                .getElementById(
+                    "modalToolIcon"
+                )
                 .textContent =
                 currentDashboardTool.icon;
 
 
+
             document
-                .getElementById("modalToolCategory")
+                .getElementById(
+                    "modalToolCategory"
+                )
                 .textContent =
                 currentDashboardTool.category;
 
 
+
             document
-                .getElementById("modalToolTitle")
+                .getElementById(
+                    "modalToolTitle"
+                )
                 .textContent =
                 currentDashboardTool.title;
 
 
+
             document
-                .getElementById("modalToolDescription")
+                .getElementById(
+                    "modalToolDescription"
+                )
                 .textContent =
                 currentDashboardTool.description;
 
@@ -1518,175 +1603,200 @@
                 );
 
 
-            fieldContainer.innerHTML = "";
+            fieldContainer.innerHTML =
+                "";
 
 
 
             currentDashboardTool
                 .fields
-                .forEach(field => {
+                .forEach(
+                    field => {
 
 
-                    const group =
-                        document.createElement("div");
-
-
-                    group.className =
-                        "dashboard-form-group";
-
-
-
-                    const label =
-                        document.createElement("label");
-
-
-                    label.textContent =
-                        field.label;
-
-
-                    group.appendChild(label);
-
-
-
-                    let input;
-
-
-
-                    if (
-                        field.type ===
-                        "select"
-                    ) {
-
-
-                        input =
-                            document.createElement(
-                                "select"
-                            );
-
-
-                        const firstOption =
-                            document.createElement(
-                                "option"
-                            );
-
-
-                        firstOption.value =
-                            "";
-
-
-                        firstOption.textContent =
-                            "Selecione uma opção";
-
-
-                        firstOption.disabled =
-                            true;
-
-
-                        firstOption.selected =
-                            true;
-
-
-                        input.appendChild(
-                            firstOption
-                        );
-
-
-
-                        field.options.forEach(
-                            option => {
-
-
-                                const element =
-                                    document
-                                        .createElement(
-                                            "option"
-                                        );
-
-
-                                element.value =
-                                    option;
-
-
-                                element.textContent =
-                                    option;
-
-
-                                input.appendChild(
-                                    element
+                        const group =
+                            document
+                                .createElement(
+                                    "div"
                                 );
 
 
-                            }
-                        );
+                        group.className =
+                            "dashboard-form-group";
 
 
-                    }
+
+                        const label =
+                            document
+                                .createElement(
+                                    "label"
+                                );
 
 
-                    else if (
-                        field.type ===
-                        "textarea"
-                    ) {
+                        label.textContent =
+                            field.label;
 
 
-                        input =
-                            document.createElement(
-                                "textarea"
+                        group
+                            .appendChild(
+                                label
                             );
 
 
-                        input.rows =
-                            5;
+
+                        let input;
 
 
-                        input.placeholder =
-                            field.placeholder || "";
+
+                        if (
+                            field.type ===
+                            "select"
+                        ) {
 
 
-                    }
+                            input =
+                                document
+                                    .createElement(
+                                        "select"
+                                    );
 
 
-                    else {
+
+                            const firstOption =
+                                document
+                                    .createElement(
+                                        "option"
+                                    );
 
 
-                        input =
-                            document.createElement(
-                                "input"
+                            firstOption.value =
+                                "";
+
+
+                            firstOption.textContent =
+                                "Selecione uma opção";
+
+
+                            firstOption.disabled =
+                                true;
+
+
+                            firstOption.selected =
+                                true;
+
+
+                            input
+                                .appendChild(
+                                    firstOption
+                                );
+
+
+
+                            field
+                                .options
+                                .forEach(
+                                    option => {
+
+
+                                        const optionElement =
+                                            document
+                                                .createElement(
+                                                    "option"
+                                                );
+
+
+                                        optionElement.value =
+                                            option;
+
+
+                                        optionElement.textContent =
+                                            option;
+
+
+                                        input
+                                            .appendChild(
+                                                optionElement
+                                            );
+
+
+                                    }
+                                );
+
+
+                        }
+
+
+                        else if (
+                            field.type ===
+                            "textarea"
+                        ) {
+
+
+                            input =
+                                document
+                                    .createElement(
+                                        "textarea"
+                                    );
+
+
+                            input.rows =
+                                5;
+
+
+                            input.placeholder =
+                                field.placeholder ||
+                                "";
+
+
+                        }
+
+
+                        else {
+
+
+                            input =
+                                document
+                                    .createElement(
+                                        "input"
+                                    );
+
+
+                            input.type =
+                                "text";
+
+
+                            input.placeholder =
+                                field.placeholder ||
+                                "";
+
+
+                        }
+
+
+
+                        input.name =
+                            field.name;
+
+
+                        input.required =
+                            true;
+
+
+
+                        group
+                            .appendChild(
+                                input
                             );
 
 
-                        input.type =
-                            "text";
-
-
-                        input.placeholder =
-                            field.placeholder || "";
+                        fieldContainer
+                            .appendChild(
+                                group
+                            );
 
 
                     }
-
-
-
-                    input.name =
-                        field.name;
-
-
-                    input.required =
-                        true;
-
-
-                    group.appendChild(
-                        input
-                    );
-
-
-                    fieldContainer
-                        .appendChild(
-                            group
-                        );
-
-
-                });
+                );
 
 
 
@@ -1703,54 +1813,86 @@
                     "dashboardResult"
                 )
                 .classList
-                .remove("visible");
+                .remove(
+                    "visible"
+                );
 
 
 
-            document
-                .getElementById(
-                    "dashboardModal"
-                )
+            const modal =
+                document
+                    .getElementById(
+                        "dashboardModal"
+                    );
+
+
+            modal
                 .classList
-                .add("active");
+                .add(
+                    "active"
+                );
+
+
+            modal
+                .setAttribute(
+                    "aria-hidden",
+                    "false"
+                );
 
 
             document.body
                 .classList
-                .add("dashboard-modal-open");
+                .add(
+                    "dashboard-modal-open"
+                );
+
 
         }
 
 
 
         /* =========================================
-           FECHAR MODAL
+           FECHAR TOOL
         ========================================== */
-
 
         function closeTool() {
 
 
-            document
-                .getElementById(
-                    "dashboardModal"
-                )
+            const modal =
+                document
+                    .getElementById(
+                        "dashboardModal"
+                    );
+
+
+            modal
                 .classList
-                .remove("active");
+                .remove(
+                    "active"
+                );
+
+
+            modal
+                .setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
 
 
             document.body
                 .classList
-                .remove("dashboard-modal-open");
+                .remove(
+                    "dashboard-modal-open"
+                );
+
 
         }
 
 
 
         /* =========================================
-           GERAR RESULTADO
+           FORM
         ========================================== */
-
 
         document
             .getElementById(
@@ -1764,7 +1906,9 @@
                     event.preventDefault();
 
 
-                    if (!currentDashboardTool) {
+                    if (
+                        !currentDashboardTool
+                    ) {
 
                         return;
 
@@ -1778,25 +1922,37 @@
                         );
 
 
-                    const values = {};
+                    const values =
+                        {};
 
 
-                    formData.forEach(
-                        (value, key) => {
+                    formData
+                        .forEach(
+                            (
+                                value,
+                                key
+                            ) => {
 
-                            values[key] =
-                                String(value)
+
+                                values[key] =
+                                    String(
+                                        value
+                                    )
                                     .trim();
 
-                        }
-                    );
+
+                            }
+                        );
 
 
 
                     const result =
                         generateDashboardResult(
+
                             currentDashboardTool,
+
                             values
+
                         );
 
 
@@ -1815,7 +1971,9 @@
                             "dashboardResult"
                         )
                         .classList
-                        .add("visible");
+                        .add(
+                            "visible"
+                        );
 
 
 
@@ -1829,35 +1987,14 @@
 
 
 
+        /* =========================================
+           GERAR RESULTADO LOCAL
+        ========================================== */
+
         function generateDashboardResult(
             tool,
             values
         ) {
-
-
-            if (
-                tool.category ===
-                "ATENDIMENTO"
-            ) {
-
-
-                return `Olá! Tudo bem?
-
-Obrigado por entrar em contato com ${values.negocio}.
-
-Sobre sua solicitação:
-
-${values.situacao}
-
-Preparamos esta mensagem considerando um tom ${values.tom.toLowerCase()} e o objetivo "${values.tipo}".
-
-Se precisar de mais alguma informação, estamos à disposição.
-
-Equipe ${values.negocio}`;
-
-
-            }
-
 
 
             if (
@@ -1879,13 +2016,15 @@ ${values.publico}
 
 IDEIA:
 
-Apresente ${values.assunto} de forma simples e direta, mostrando como isso pode ajudar ou gerar interesse no público de ${values.publico}.
+Apresente ${values.assunto} de maneira interessante e direta para o público de ${values.publico}.
 
-CHAMADA:
+Mostre o benefício principal e incentive o cliente a conhecer melhor a ${values.negocio}.
 
-Quer saber mais? Entre em contato com ${values.negocio}.
+CHAMADA PARA AÇÃO:
 
-#conteudo #negocios #marketing`;
+Entre em contato para saber mais.
+
+#marketing #conteudo #negocios`;
 
 
             }
@@ -1907,16 +2046,22 @@ Período:
 ${values.periodo}
 
 Dados informados:
+
 ${values.dados}
 
-Pontos para observar:
+PONTOS PARA OBSERVAR:
 
 • Compare os resultados entre os períodos.
-• Identifique aumentos ou quedas relevantes.
-• Procure padrões que possam explicar as mudanças.
-• Verifique quais ações tiveram maior impacto.
 
-Esta é uma análise inicial do MVP. A integração com IA permitirá análises mais profundas.`;
+• Identifique aumentos e quedas.
+
+• Observe quais resultados se destacam.
+
+• Procure possíveis causas para mudanças.
+
+• Identifique oportunidades de melhoria.
+
+Esta é uma análise inicial do MVP da IA Prática.`;
 
 
             }
@@ -1925,24 +2070,31 @@ Esta é uma análise inicial do MVP. A integração com IA permitirá análises 
 
             return `PROMPT GERADO
 
-Atue como um especialista capaz de ajudar na seguinte tarefa:
+Atue como um especialista capaz de realizar a seguinte tarefa:
 
 ${values.tarefa}
 
-Contexto:
+CONTEXTO:
 
 ${values.contexto}
 
-Nível de detalhe desejado:
+NÍVEL DE DETALHE:
+
 ${values.nivel}
 
-Sua resposta deve:
+INSTRUÇÕES:
 
-1. Entender claramente o objetivo.
-2. Organizar a resposta em etapas.
-3. Explicar as decisões importantes.
-4. Dar exemplos quando forem úteis.
-5. Entregar uma resposta prática e pronta para uso.`;
+1. Entenda claramente o objetivo.
+
+2. Organize a resposta de forma lógica.
+
+3. Explique os pontos importantes.
+
+4. Utilize exemplos quando forem úteis.
+
+5. Evite informações desnecessárias.
+
+6. Entregue uma resposta prática e pronta para uso.`;
 
 
         }
@@ -1950,11 +2102,10 @@ Sua resposta deve:
 
 
         /* =========================================
-           COPIAR RESULTADO
+           COPIAR
         ========================================== */
 
-
-        function copyDashboardResult() {
+        async function copyDashboardResult() {
 
 
             const text =
@@ -1965,50 +2116,90 @@ Sua resposta deve:
                     .textContent;
 
 
-            navigator.clipboard
-                .writeText(text)
-                .then(() => {
+            if (!text) {
+
+                return;
+
+            }
 
 
-                    const toast =
-                        document.getElementById(
+            try {
+
+
+                await navigator
+                    .clipboard
+                    .writeText(
+                        text
+                    );
+
+
+                const toast =
+                    document
+                        .getElementById(
                             "dashboardToast"
                         );
 
 
-                    toast.classList.add(
+                toast
+                    .classList
+                    .add(
                         "visible"
                     );
 
 
-                    setTimeout(() => {
-
-                        toast.classList
-                            .remove("visible");
-
-                    }, 1800);
+                setTimeout(
+                    () => {
 
 
-                });
+                        toast
+                            .classList
+                            .remove(
+                                "visible"
+                            );
+
+
+                    },
+                    1800
+                );
+
+
+            }
+
+            catch (error) {
+
+
+                console.error(
+                    "Erro ao copiar:",
+                    error
+                );
+
+
+            }
+
 
         }
 
 
 
         /* =========================================
-           HISTÓRICO LOCAL
+           HISTÓRICO
         ========================================== */
-
 
         function saveActivity(tool) {
 
 
             const history =
                 JSON.parse(
-                    localStorage.getItem(
-                        "iapratica-history"
-                    ) || "[]"
+
+                    localStorage
+                        .getItem(
+                            "iapratica-history"
+                        ) ||
+
+                    "[]"
+
                 );
+
 
 
             history.unshift({
@@ -2027,11 +2218,13 @@ Sua resposta deve:
                         .toLocaleTimeString(
                             "pt-BR",
                             {
+
                                 hour:
                                     "2-digit",
 
                                 minute:
                                     "2-digit"
+
                             }
                         )
 
@@ -2039,18 +2232,25 @@ Sua resposta deve:
 
 
 
-            localStorage.setItem(
-                "iapratica-history",
-                JSON.stringify(
-                    history.slice(
-                        0,
-                        5
+            localStorage
+                .setItem(
+
+                    "iapratica-history",
+
+                    JSON.stringify(
+
+                        history.slice(
+                            0,
+                            5
+                        )
+
                     )
-                )
-            );
+
+                );
 
 
             renderHistory();
+
 
         }
 
@@ -2060,22 +2260,29 @@ Sua resposta deve:
 
 
             const container =
-                document.getElementById(
-                    "recentActivity"
-                );
+                document
+                    .getElementById(
+                        "recentActivity"
+                    );
 
 
             const history =
                 JSON.parse(
-                    localStorage.getItem(
-                        "iapratica-history"
-                    ) || "[]"
+
+                    localStorage
+                        .getItem(
+                            "iapratica-history"
+                        ) ||
+
+                    "[]"
+
                 );
 
 
 
             if (
-                history.length === 0
+                history.length ===
+                0
             ) {
 
 
@@ -2103,40 +2310,48 @@ Sua resposta deve:
 
                 return;
 
+
             }
 
 
 
             container.innerHTML =
                 history
-                    .map(item => `
+                    .map(
+                        item => `
 
-                        <div class="history-item">
+                            <div class="history-item">
 
-                            <span class="history-icon">
-                                ${item.icon}
-                            </span>
+                                <span class="history-icon">
+                                    ${item.icon}
+                                </span>
 
-                            <div>
 
-                                <strong>
-                                    ${item.title}
-                                </strong>
+                                <div>
 
-                                <small>
-                                    ${item.category}
-                                </small>
+                                    <strong>
+                                        ${item.title}
+                                    </strong>
+
+                                    <small>
+                                        ${item.category}
+                                    </small>
+
+                                </div>
+
+
+                                <time>
+                                    ${item.time}
+                                </time>
 
                             </div>
 
-                            <time>
-                                ${item.time}
-                            </time>
+                        `
+                    )
+                    .join(
+                        ""
+                    );
 
-                        </div>
-
-                    `)
-                    .join("");
 
         }
 
@@ -2145,12 +2360,14 @@ Sua resposta deve:
         function clearHistory() {
 
 
-            localStorage.removeItem(
-                "iapratica-history"
-            );
+            localStorage
+                .removeItem(
+                    "iapratica-history"
+                );
 
 
             renderHistory();
+
 
         }
 
@@ -2159,7 +2376,6 @@ Sua resposta deve:
         /* =========================================
            ESC
         ========================================== */
-
 
         document
             .addEventListener(
@@ -2172,15 +2388,23 @@ Sua resposta deve:
                         "Escape"
                     ) {
 
+
                         closeTool();
+
                         closeSidebar();
 
+
                     }
+
 
                 }
             );
 
 
+
+        /* =========================================
+           INICIAR
+        ========================================== */
 
         renderHistory();
 

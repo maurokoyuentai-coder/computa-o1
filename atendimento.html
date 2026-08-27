@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="IA Prática - Assistente de atendimento para pequenos negócios."
+    >
+
+    <meta
+        name="theme-color"
+        content="#070b13"
+    >
+
+    <title>
+        Atendimento — IA Prática
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="./atendimento.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================
+         HEADER
+    =========================================== -->
+
+    <header class="topbar">
+
+        <a
+            href="./dashboard.html"
+            class="logo"
+        >
+
+            <span class="logo-icon">
+                ✦
+            </span>
+
+            <span>
+                IA <strong>Prática</strong>
+            </span>
+
+        </a>
+
+
+        <a
+            href="./dashboard.html"
+            class="back-button"
+        >
+            ← Voltar ao dashboard
+        </a>
+
+    </header>
+
+
+
+    <!-- ==========================================
+         CONTEÚDO
+    =========================================== -->
+
+    <main class="page">
+
+
+        <section class="intro">
+
+
+            <span class="category">
+                ATENDIMENTO
+            </span>
+
+
+            <h1>
+                Fale com seus clientes
+                <span>com mais facilidade.</span>
+            </h1>
+
+
+            <p>
+                Explique a situação e deixe a IA Prática
+                preparar uma mensagem profissional para você.
+            </p>
+
+
+        </section>
+
+
+
+        <div class="workspace">
+
+
+            <!-- =====================================
+                 FORMULÁRIO
+            ====================================== -->
+
+            <section class="panel form-panel">
+
+
+                <div class="panel-header">
+
+
+                    <div class="panel-icon">
+                        💬
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            NOVA MENSAGEM
+                        </span>
+
+                        <h2>
+                            Conte o que aconteceu
+                        </h2>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <form id="attendanceForm">
+
+
+                    <!-- TIPO -->
+
+                    <div class="form-group">
+
+                        <label for="tipo">
+                            O que você precisa enviar?
+                        </label>
+
+
+                        <select
+                            id="tipo"
+                            name="tipo"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                selected
+                                disabled
+                            >
+                                Selecione uma opção
+                            </option>
+
+                            <option>
+                                Resposta para cliente
+                            </option>
+
+                            <option>
+                                Resposta para reclamação
+                            </option>
+
+                            <option>
+                                Mensagem de orçamento
+                            </option>
+
+                            <option>
+                                Mensagem de acompanhamento
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- NEGÓCIO -->
+
+                    <div class="form-group">
+
+                        <label for="negocio">
+                            Qual é o seu negócio?
+                        </label>
+
+
+                        <input
+                            id="negocio"
+                            name="negocio"
+                            type="text"
+                            placeholder="Ex.: Loja de ferramentas"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- SITUAÇÃO -->
+
+                    <div class="form-group">
+
+                        <div class="label-row">
+
+                            <label for="situacao">
+                                Explique a situação
+                            </label>
+
+
+                            <span id="characterCount">
+                                0 / 1000
+                            </span>
+
+                        </div>
+
+
+                        <textarea
+                            id="situacao"
+                            name="situacao"
+                            rows="7"
+                            maxlength="1000"
+                            placeholder="Ex.: O cliente perguntou se o produto está disponível e qual o prazo de entrega..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <!-- TOM -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Qual tom você deseja?
+                        </label>
+
+
+                        <div class="tone-options">
+
+
+                            <label class="tone-card">
+
+                                <input
+                                    type="radio"
+                                    name="tom"
+                                    value="Profissional"
+                                    checked
+                                >
+
+                                <span>
+
+                                    <strong>
+                                        👔 Profissional
+                                    </strong>
+
+                                    <small>
+                                        Claro e confiável
+                                    </small>
+
+                                </span>
+
+                            </label>
+
+
+
+                            <label class="tone-card">
+
+                                <input
+                                    type="radio"
+                                    name="tom"
+                                    value="Amigável"
+                                >
+
+                                <span>
+
+                                    <strong>
+                                        😊 Amigável
+                                    </strong>
+
+                                    <small>
+                                        Próximo e simpático
+                                    </small>
+
+                                </span>
+
+                            </label>
+
+
+
+                            <label class="tone-card">
+
+                                <input
+                                    type="radio"
+                                    name="tom"
+                                    value="Direto"
+                                >
+
+                                <span>
+
+                                    <strong>
+                                        ⚡ Direto
+                                    </strong>
+
+                                    <small>
+                                        Curto e objetivo
+                                    </small>
+
+                                </span>
+
+                            </label>
+
+
+
+                            <label class="tone-card">
+
+                                <input
+                                    type="radio"
+                                    name="tom"
+                                    value="Elegante"
+                                >
+
+                                <span>
+
+                                    <strong>
+                                        ✨ Elegante
+                                    </strong>
+
+                                    <small>
+                                        Formal e sofisticado
+                                    </small>
+
+                                </span>
+
+                            </label>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <button
+                        id="generateButton"
+                        type="submit"
+                        class="generate-button"
+                    >
+
+                        <span>
+                            ✦
+                        </span>
+
+                        Gerar resposta
+
+                    </button>
+
+
+                </form>
+
+
+            </section>
+
+
+
+            <!-- =====================================
+                 RESULTADO
+            ====================================== -->
+
+            <section class="panel result-panel">
+
+
+                <div class="result-top">
+
+
+                    <div>
+
+                        <span>
+                            RESULTADO
+                        </span>
+
+                        <h2>
+                            Mensagem gerada
+                        </h2>
+
+                    </div>
+
+
+                    <span
+                        id="resultStatus"
+                        class="result-status"
+                    >
+
+                        <i></i>
+
+                        Aguardando
+
+                    </span>
+
+
+                </div>
+
+
+
+                <!-- ESTADO VAZIO -->
+
+                <div
+                    id="emptyState"
+                    class="empty-state"
+                >
+
+                    <div class="empty-icon">
+                        ✦
+                    </div>
+
+                    <h3>
+                        Sua mensagem aparecerá aqui
+                    </h3>
+
+                    <p>
+                        Preencha o formulário e clique em
+                        “Gerar resposta”.
+                    </p>
+
+                </div>
+
+
+
+                <!-- RESULTADO -->
+
+                <div
+                    id="generatedResult"
+                    class="generated-result"
+                >
+
+
+                    <div class="ai-message">
+
+
+                        <div class="ai-avatar">
+                            ✦
+                        </div>
+
+
+                        <div class="ai-content">
+
+                            <span>
+                                IA PRÁTICA
+                            </span>
+
+                            <div
+                                id="resultText"
+                                class="result-text"
+                            ></div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="result-actions">
+
+
+                        <button
+                            type="button"
+                            id="copyButton"
+                            class="secondary-button"
+                        >
+                            ▣ Copiar
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="regenerateButton"
+                            class="secondary-button"
+                        >
+                            ↻ Gerar novamente
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="clearButton"
+                            class="secondary-button danger"
+                        >
+                            Limpar
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- ==========================================
+         TOAST
+    =========================================== -->
+
+    <div
+        id="toast"
+        class="toast"
+    >
+        Mensagem copiada!
+    </div>
+
+
+
+    <script src="./atendimento.js"></script>
+
+
+</body>
+
+</html>
