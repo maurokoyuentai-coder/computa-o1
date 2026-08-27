@@ -2777,3 +2777,81 @@
 
 
 }
+.quick-action-link {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        38px 1fr auto;
+
+    align-items:
+        center;
+
+    gap:
+        11px;
+
+    padding:
+        12px 0;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.05);
+
+    color:
+        white;
+
+    text-align:
+        left;
+
+    text-decoration:
+        none;
+
+    cursor:
+        pointer;
+
+}
+
+
+.quick-action-link > span:nth-child(2) {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+}
+
+
+.quick-action-link strong {
+
+    font-size:
+        10px;
+
+}
+
+
+.quick-action-link small {
+
+    margin-top:
+        2px;
+
+    color:
+        #677286;
+
+    font-size:
+        8px;
+
+}
+
+
+.quick-action-link b {
+
+    color:
+        #4c5769;
+
+    font-size:
+        10px;
+
+}
