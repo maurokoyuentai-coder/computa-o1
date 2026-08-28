@@ -1,158 +1,93 @@
-/* =========================================================
-   ELEMENTOS
-========================================================= */
-
 const form =
-    document.getElementById(
-        "attendanceForm"
-    );
-
+    document.getElementById("attendanceForm");
 
 const situationField =
-    document.getElementById(
-        "situacao"
-    );
-
+    document.getElementById("situacao");
 
 const characterCount =
-    document.getElementById(
-        "characterCount"
-    );
-
+    document.getElementById("characterCount");
 
 const generateButton =
-    document.getElementById(
-        "generateButton"
-    );
-
+    document.getElementById("generateButton");
 
 const emptyState =
-    document.getElementById(
-        "emptyState"
-    );
-
+    document.getElementById("emptyState");
 
 const generatedResult =
-    document.getElementById(
-        "generatedResult"
-    );
-
+    document.getElementById("generatedResult");
 
 const resultText =
-    document.getElementById(
-        "resultText"
-    );
-
+    document.getElementById("resultText");
 
 const resultStatus =
-    document.getElementById(
-        "resultStatus"
-    );
-
+    document.getElementById("resultStatus");
 
 const copyButton =
-    document.getElementById(
-        "copyButton"
-    );
-
+    document.getElementById("copyButton");
 
 const regenerateButton =
-    document.getElementById(
-        "regenerateButton"
-    );
-
+    document.getElementById("regenerateButton");
 
 const clearButton =
-    document.getElementById(
-        "clearButton"
-    );
-
+    document.getElementById("clearButton");
 
 const toast =
-    document.getElementById(
-        "toast"
-    );
+    document.getElementById("toast");
 
 
 
-/* =========================================================
-   CONTADOR
-========================================================= */
+/* CONTADOR */
 
-situationField
-    .addEventListener(
-        "input",
-        function() {
+situationField.addEventListener(
+    "input",
+    function () {
 
+        characterCount.textContent =
+            `${this.value.length} / 1000`;
 
-            characterCount.textContent =
-                `${this.value.length} / 1000`;
-
-
-        }
-    );
+    }
+);
 
 
 
-/* =========================================================
-   FORM
-========================================================= */
+/* FORMULÁRIO */
 
-form
-    .addEventListener(
-        "submit",
-        function(event) {
+form.addEventListener(
+    "submit",
+    function (event) {
 
+        event.preventDefault();
 
-            event.preventDefault();
+        generateMessage();
 
-
-            generateMessage();
-
-
-        }
-    );
+    }
+);
 
 
 
-/* =========================================================
-   GERAR
-========================================================= */
+/* GERAR RESPOSTA */
 
 function generateMessage() {
 
-
     const data =
-        new FormData(
-            form
-        );
+        new FormData(form);
 
 
     const values = {
 
-
         tipo:
             data.get("tipo"),
 
-
         negocio:
-            data
-                .get("negocio")
-                .trim(),
-
+            data.get("negocio").trim(),
 
         situacao:
-            data
-                .get("situacao")
-                .trim(),
-
+            data.get("situacao").trim(),
 
         tom:
             data.get("tom")
 
-
     };
-
 
 
     if (
@@ -166,7 +101,6 @@ function generateMessage() {
     }
 
 
-
     generateButton.disabled =
         true;
 
@@ -175,19 +109,15 @@ function generateMessage() {
         "<span>✦</span> Gerando...";
 
 
-
     setTimeout(
-        () => {
+        function () {
 
-
-            const message =
-                buildMessage(
-                    values
-                );
+            const response =
+                buildMessage(values);
 
 
             resultText.textContent =
-                message;
+                response;
 
 
             emptyState.style.display =
@@ -216,32 +146,24 @@ function generateMessage() {
                 "<span>✦</span> Gerar resposta";
 
 
-            saveForm(
-                values
-            );
+            saveForm(values);
 
+            saveActivity();
 
         },
         450
     );
 
-
 }
 
 
 
-/* =========================================================
-   CONSTRUTOR
-========================================================= */
+/* MONTAR RESPOSTA */
 
 function buildMessage(values) {
 
-
     const greeting =
-        getGreeting(
-            values.tom
-        );
-
+        getGreeting(values.tom);
 
     const introduction =
         getIntroduction(
@@ -249,12 +171,8 @@ function buildMessage(values) {
             values.negocio
         );
 
-
     const resolution =
-        getResolution(
-            values.tipo
-        );
-
+        getResolution(values.tipo);
 
     const closing =
         getClosing(
@@ -273,36 +191,27 @@ ${resolution}
 
 ${closing}`;
 
-
 }
 
 
 
-/* =========================================================
-   SAUDAÇÃO
-========================================================= */
+/* SAUDAÇÃO */
 
 function getGreeting(tone) {
 
-
     const greetings = {
-
 
         Profissional:
             "Olá! Tudo bem?",
 
-
         Amigável:
             "Oi! Tudo bem? 😊",
-
 
         Direto:
             "Olá!",
 
-
         Elegante:
             "Olá! Espero que esteja bem."
-
 
     };
 
@@ -312,23 +221,18 @@ function getGreeting(tone) {
         greetings.Profissional
     );
 
-
 }
 
 
 
-/* =========================================================
-   INTRODUÇÃO
-========================================================= */
+/* INTRODUÇÃO */
 
 function getIntroduction(
     type,
     business
 ) {
 
-
-    const messages = {
-
+    const introductions = {
 
         "Resposta para cliente":
 
@@ -337,7 +241,7 @@ function getIntroduction(
 
         "Resposta para reclamação":
 
-            `Agradecemos por nos informar sobre a situação. Na ${business}, valorizamos a experiência dos nossos clientes e queremos ajudá-lo da melhor maneira possível.`,
+            `Agradecemos por nos informar sobre a situação. Na ${business}, valorizamos a experiência dos nossos clientes e queremos ajudar da melhor forma possível.`,
 
 
         "Mensagem de orçamento":
@@ -349,74 +253,57 @@ function getIntroduction(
 
             `Estamos entrando em contato para acompanhar seu atendimento com a ${business}.`
 
-
     };
 
 
     return (
-        messages[type] ||
-        messages[
-            "Resposta para cliente"
-        ]
+        introductions[type] ||
+        introductions["Resposta para cliente"]
     );
-
 
 }
 
 
 
-/* =========================================================
-   RESOLUÇÃO
-========================================================= */
+/* RESOLUÇÃO */
 
 function getResolution(type) {
 
-
     switch (type) {
-
 
         case "Resposta para reclamação":
 
-            return `Queremos entender a melhor forma de resolver essa situação e encontrar uma solução adequada para você.`;
-
+            return "Queremos entender a melhor forma de resolver essa situação e encontrar uma solução adequada para você.";
 
 
         case "Mensagem de orçamento":
 
-            return `Caso precise de algum detalhe adicional para avaliar o orçamento, ficaremos felizes em ajudar.`;
-
+            return "Caso precise de algum detalhe adicional para avaliar o orçamento, ficaremos felizes em ajudar.";
 
 
         case "Mensagem de acompanhamento":
 
-            return `Gostaríamos de saber se podemos ajudar em mais alguma etapa ou esclarecer alguma dúvida.`;
-
+            return "Gostaríamos de saber se podemos ajudar em mais alguma etapa ou esclarecer alguma dúvida.";
 
 
         default:
 
-            return `Esperamos que essas informações ajudem. Caso tenha alguma dúvida, podemos continuar o atendimento.`;
-
+            return "Esperamos que essas informações ajudem. Caso tenha alguma dúvida, podemos continuar o atendimento.";
 
     }
-
 
 }
 
 
 
-/* =========================================================
-   FINALIZAÇÃO
-========================================================= */
+/* FINALIZAÇÃO */
 
 function getClosing(
     tone,
     business
 ) {
 
-
     const closings = {
-
 
         Profissional:
 
@@ -447,7 +334,6 @@ Equipe ${business}`,
 Cordialmente,
 Equipe ${business}`
 
-
     };
 
 
@@ -456,163 +342,176 @@ Equipe ${business}`
         closings.Profissional
     );
 
-
 }
 
 
 
-/* =========================================================
-   COPIAR
-========================================================= */
+/* COPIAR */
 
-copyButton
-    .addEventListener(
-        "click",
-        async function() {
+copyButton.addEventListener(
+    "click",
+    async function () {
 
-
-            const text =
-                resultText.textContent;
+        const text =
+            resultText.textContent;
 
 
-            if (!text) {
-
-                return;
-
-            }
+        if (!text) {
+            return;
+        }
 
 
-            try {
+        try {
+
+            await navigator
+                .clipboard
+                .writeText(text);
 
 
-                await navigator
-                    .clipboard
-                    .writeText(
-                        text
-                    );
-
-
-                showToast(
-                    "Mensagem copiada!"
-                );
-
-
-            }
-
-            catch (error) {
-
-
-                console.error(
-                    "Erro ao copiar:",
-                    error
-                );
-
-
-            }
-
+            showToast(
+                "Mensagem copiada!"
+            );
 
         }
-    );
 
+        catch (error) {
 
-
-/* =========================================================
-   REGENERAR
-========================================================= */
-
-regenerateButton
-    .addEventListener(
-        "click",
-        function() {
-
-
-            generateMessage();
-
+            console.error(
+                "Erro ao copiar:",
+                error
+            );
 
         }
-    );
+
+    }
+);
 
 
 
-/* =========================================================
-   LIMPAR
-========================================================= */
+/* GERAR NOVAMENTE */
 
-clearButton
-    .addEventListener(
-        "click",
-        function() {
+regenerateButton.addEventListener(
+    "click",
+    function () {
 
+        generateMessage();
 
-            form.reset();
-
-
-            situationField.value =
-                "";
-
-
-            characterCount.textContent =
-                "0 / 1000";
-
-
-            resultText.textContent =
-                "";
-
-
-            generatedResult
-                .classList
-                .remove("visible");
-
-
-            emptyState.style.display =
-                "flex";
-
-
-            resultStatus
-                .classList
-                .remove("ready");
-
-
-            resultStatus.innerHTML =
-                "<i></i> Aguardando";
-
-
-            localStorage
-                .removeItem(
-                    "iapratica-attendance"
-                );
-
-
-        }
-    );
+    }
+);
 
 
 
-/* =========================================================
-   SALVAR FORMULÁRIO
-========================================================= */
+/* LIMPAR */
+
+clearButton.addEventListener(
+    "click",
+    function () {
+
+        form.reset();
+
+
+        situationField.value =
+            "";
+
+
+        characterCount.textContent =
+            "0 / 1000";
+
+
+        resultText.textContent =
+            "";
+
+
+        generatedResult
+            .classList
+            .remove("visible");
+
+
+        emptyState.style.display =
+            "flex";
+
+
+        resultStatus
+            .classList
+            .remove("ready");
+
+
+        resultStatus.innerHTML =
+            "<i></i> Aguardando";
+
+
+        localStorage.removeItem(
+            "iapratica-attendance"
+        );
+
+    }
+);
+
+
+
+/* SALVAR DADOS */
 
 function saveForm(values) {
 
-
     localStorage.setItem(
         "iapratica-attendance",
-        JSON.stringify(
-            values
-        )
+        JSON.stringify(values)
     );
-
 
 }
 
 
 
-/* =========================================================
-   CARREGAR ÚLTIMO FORMULÁRIO
-========================================================= */
+/* HISTÓRICO DO DASHBOARD */
+
+function saveActivity() {
+
+    const history =
+        JSON.parse(
+            localStorage.getItem(
+                "iapratica-history"
+            ) || "[]"
+        );
+
+
+    history.unshift({
+
+        icon:
+            "💬",
+
+        category:
+            "ATENDIMENTO",
+
+        title:
+            "Falar com clientes",
+
+        time:
+            new Date()
+                .toLocaleTimeString(
+                    "pt-BR",
+                    {
+                        hour: "2-digit",
+                        minute: "2-digit"
+                    }
+                )
+
+    });
+
+
+    localStorage.setItem(
+        "iapratica-history",
+        JSON.stringify(
+            history.slice(0,5)
+        )
+    );
+
+}
+
+
+
+/* CARREGAR DADOS */
 
 function loadForm() {
-
 
     const saved =
         localStorage.getItem(
@@ -621,27 +520,20 @@ function loadForm() {
 
 
     if (!saved) {
-
         return;
-
     }
 
 
     try {
 
-
         const values =
-            JSON.parse(
-                saved
-            );
+            JSON.parse(saved);
 
 
         if (values.tipo) {
 
             document
-                .getElementById(
-                    "tipo"
-                )
+                .getElementById("tipo")
                 .value =
                 values.tipo;
 
@@ -651,9 +543,7 @@ function loadForm() {
         if (values.negocio) {
 
             document
-                .getElementById(
-                    "negocio"
-                )
+                .getElementById("negocio")
                 .value =
                 values.negocio;
 
@@ -674,7 +564,6 @@ function loadForm() {
 
         if (values.tom) {
 
-
             const radio =
                 document.querySelector(
                     `input[name="tom"][value="${values.tom}"]`
@@ -688,62 +577,51 @@ function loadForm() {
 
             }
 
-
         }
-
 
     }
 
     catch (error) {
 
-
         console.error(
-            "Erro ao carregar formulário:",
+            "Erro ao carregar:",
             error
         );
 
-
     }
-
 
 }
 
 
 
-/* =========================================================
-   TOAST
-========================================================= */
+/* TOAST */
 
 function showToast(message) {
-
 
     toast.textContent =
         message;
 
 
-    toast.classList
-        .add("visible");
+    toast.classList.add(
+        "visible"
+    );
 
 
     setTimeout(
-        () => {
+        function () {
 
-
-            toast.classList
-                .remove("visible");
-
+            toast.classList.remove(
+                "visible"
+            );
 
         },
         1800
     );
 
-
 }
 
 
 
-/* =========================================================
-   INICIAR
-========================================================= */
+/* INICIAR */
 
 loadForm();
