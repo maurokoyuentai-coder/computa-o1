@@ -1,0 +1,12 @@
+{
+  "name": "ia-pratica",
+  "version": "1.0.0",
+  "description": "IA Pratica para pequenos negocios",
+  "type": "module",
+  "scripts": {
+    "start": "node api/generate.js"
+  },
+  "dependencies": {
+    "openai": "^5.0.0"
+  }
+}
