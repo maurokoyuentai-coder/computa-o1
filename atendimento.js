@@ -1,7 +1,7 @@
 const form =
     document.getElementById("attendanceForm");
 
-const situationField =
+const situacao =
     document.getElementById("situacao");
 
 const characterCount =
@@ -36,38 +36,44 @@ const toast =
 
 
 
-/* CONTADOR */
+/* =========================================================
+   CONTADOR
+========================================================= */
 
-situationField.addEventListener(
+situacao.addEventListener(
     "input",
     function () {
 
         characterCount.textContent =
-            `${this.value.length} / 1000`;
+            this.value.length + " / 1000";
 
     }
 );
 
 
 
-/* FORMULÁRIO */
+/* =========================================================
+   ENVIAR FORMULARIO
+========================================================= */
 
 form.addEventListener(
     "submit",
-    function (event) {
+    async function (event) {
 
         event.preventDefault();
 
-        generateMessage();
+        await gerarResposta();
 
     }
 );
 
 
 
-/* GERAR RESPOSTA */
+/* =========================================================
+   GERAR RESPOSTA COM IA
+========================================================= */
 
-function generateMessage() {
+async function gerarResposta() {
 
     const data =
         new FormData(form);
@@ -79,10 +85,12 @@ function generateMessage() {
             data.get("tipo"),
 
         negocio:
-            data.get("negocio").trim(),
+            data.get("negocio")
+                .trim(),
 
         situacao:
-            data.get("situacao").trim(),
+            data.get("situacao")
+                .trim(),
 
         tom:
             data.get("tom")
@@ -93,202 +101,196 @@ function generateMessage() {
     if (
         !values.tipo ||
         !values.negocio ||
-        !values.situacao
+        !values.situacao ||
+        !values.tom
     ) {
+
+        mostrarToast(
+            "Preencha todos os campos."
+        );
 
         return;
 
     }
 
 
+
+    /* BOTAO CARREGANDO */
+
     generateButton.disabled =
         true;
 
 
-    generateButton.innerHTML =
-        "<span>✦</span> Gerando...";
+    generateButton.textContent =
+        "Gerando com IA...";
 
 
-    setTimeout(
-        function () {
-
-            const response =
-                buildMessage(values);
-
-
-            resultText.textContent =
-                response;
-
-
-            emptyState.style.display =
-                "none";
-
-
-            generatedResult
-                .classList
-                .add("visible");
-
-
-            resultStatus
-                .classList
-                .add("ready");
-
-
-            resultStatus.innerHTML =
-                "<i></i> Pronto";
-
-
-            generateButton.disabled =
-                false;
-
-
-            generateButton.innerHTML =
-                "<span>✦</span> Gerar resposta";
-
-
-            saveForm(values);
-
-            saveActivity();
-
-        },
-        450
+    resultStatus.classList.remove(
+        "ready"
     );
 
-}
+
+    resultStatus.innerHTML =
+        "<i></i> Gerando...";
 
 
 
-/* MONTAR RESPOSTA */
+    try {
 
-function buildMessage(values) {
+        /* =============================================
+           CHAMADA PARA API
+        ============================================== */
 
-    const greeting =
-        getGreeting(values.tom);
+        const response =
+            await fetch(
+                "/api/generate",
+                {
 
-    const introduction =
-        getIntroduction(
-            values.tipo,
-            values.negocio
+                    method:
+                        "POST",
+
+                    headers: {
+
+                        "Content-Type":
+                            "application/json"
+
+                    },
+
+                    body:
+                        JSON.stringify({
+
+                            ferramenta:
+                                "atendimento",
+
+                            dados:
+                                values
+
+                        })
+
+                }
+            );
+
+
+
+        const result =
+            await response.json();
+
+
+
+        /* =============================================
+           ERRO DA API
+        ============================================== */
+
+        if (!response.ok) {
+
+            throw new Error(
+                result.error ||
+                "Erro ao gerar resposta."
+            );
+
+        }
+
+
+
+        if (!result.result) {
+
+            throw new Error(
+                "A API nao retornou uma resposta."
+            );
+
+        }
+
+
+
+        /* =============================================
+           MOSTRAR RESULTADO
+        ============================================== */
+
+        resultText.textContent =
+            result.result;
+
+
+        emptyState.style.display =
+            "none";
+
+
+        generatedResult
+            .classList
+            .add(
+                "visible"
+            );
+
+
+        resultStatus
+            .classList
+            .add(
+                "ready"
+            );
+
+
+        resultStatus.innerHTML =
+            "<i></i> Pronto";
+
+
+
+        /* SALVAR FORMULARIO */
+
+        salvarFormulario(
+            values
         );
 
-    const resolution =
-        getResolution(values.tipo);
 
-    const closing =
-        getClosing(
-            values.tom,
-            values.negocio
+
+        /* SALVAR HISTORICO */
+
+        salvarHistorico();
+
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "Erro Atendimento:",
+            error
         );
 
 
-    return `${greeting}
-
-${introduction}
-
-${values.situacao}
-
-${resolution}
-
-${closing}`;
-
-}
+        emptyState.style.display =
+            "none";
 
 
-
-/* SAUDAÇÃO */
-
-function getGreeting(tone) {
-
-    const greetings = {
-
-        Profissional:
-            "Olá! Tudo bem?",
-
-        Amigável:
-            "Oi! Tudo bem? 😊",
-
-        Direto:
-            "Olá!",
-
-        Elegante:
-            "Olá! Espero que esteja bem."
-
-    };
+        generatedResult
+            .classList
+            .add(
+                "visible"
+            );
 
 
-    return (
-        greetings[tone] ||
-        greetings.Profissional
-    );
-
-}
+        resultText.textContent =
+            "Nao foi possivel gerar a resposta agora. Tente novamente.";
 
 
-
-/* INTRODUÇÃO */
-
-function getIntroduction(
-    type,
-    business
-) {
-
-    const introductions = {
-
-        "Resposta para cliente":
-
-            `Agradecemos por entrar em contato com a ${business}.`,
+        resultStatus
+            .classList
+            .remove(
+                "ready"
+            );
 
 
-        "Resposta para reclamação":
+        resultStatus.innerHTML =
+            "<i></i> Erro";
 
-            `Agradecemos por nos informar sobre a situação. Na ${business}, valorizamos a experiência dos nossos clientes e queremos ajudar da melhor forma possível.`,
+    }
 
+    finally {
 
-        "Mensagem de orçamento":
-
-            `Obrigado pelo interesse na ${business}. Será um prazer dar continuidade ao seu atendimento e fornecer as informações necessárias para o orçamento.`,
-
-
-        "Mensagem de acompanhamento":
-
-            `Estamos entrando em contato para acompanhar seu atendimento com a ${business}.`
-
-    };
+        generateButton.disabled =
+            false;
 
 
-    return (
-        introductions[type] ||
-        introductions["Resposta para cliente"]
-    );
-
-}
-
-
-
-/* RESOLUÇÃO */
-
-function getResolution(type) {
-
-    switch (type) {
-
-        case "Resposta para reclamação":
-
-            return "Queremos entender a melhor forma de resolver essa situação e encontrar uma solução adequada para você.";
-
-
-        case "Mensagem de orçamento":
-
-            return "Caso precise de algum detalhe adicional para avaliar o orçamento, ficaremos felizes em ajudar.";
-
-
-        case "Mensagem de acompanhamento":
-
-            return "Gostaríamos de saber se podemos ajudar em mais alguma etapa ou esclarecer alguma dúvida.";
-
-
-        default:
-
-            return "Esperamos que essas informações ajudem. Caso tenha alguma dúvida, podemos continuar o atendimento.";
+        generateButton.textContent =
+            "Gerar resposta";
 
     }
 
@@ -296,79 +298,49 @@ function getResolution(type) {
 
 
 
-/* FINALIZAÇÃO */
+/* =========================================================
+   GERAR NOVAMENTE
+========================================================= */
 
-function getClosing(
-    tone,
-    business
-) {
+regenerateButton.addEventListener(
+    "click",
+    async function () {
 
-    const closings = {
+        await gerarResposta();
 
-        Profissional:
-
-`Se precisar de qualquer informação adicional, estamos à disposição.
-
-Atenciosamente,
-Equipe ${business}`,
-
-
-        Amigável:
-
-`Se precisar de mais alguma coisa, pode chamar. Será um prazer ajudar! 😊
-
-Equipe ${business}`,
-
-
-        Direto:
-
-`Ficamos à disposição.
-
-Equipe ${business}`,
-
-
-        Elegante:
-
-`Permanecemos à disposição para qualquer esclarecimento adicional.
-
-Cordialmente,
-Equipe ${business}`
-
-    };
-
-
-    return (
-        closings[tone] ||
-        closings.Profissional
-    );
-
-}
+    }
+);
 
 
 
-/* COPIAR */
+/* =========================================================
+   COPIAR
+========================================================= */
 
 copyButton.addEventListener(
     "click",
     async function () {
 
-        const text =
+        const texto =
             resultText.textContent;
 
 
-        if (!text) {
+        if (!texto) {
+
             return;
+
         }
 
 
         try {
 
-            await navigator
-                .clipboard
-                .writeText(text);
+            await navigator.clipboard
+                .writeText(
+                    texto
+                );
 
 
-            showToast(
+            mostrarToast(
                 "Mensagem copiada!"
             );
 
@@ -381,6 +353,11 @@ copyButton.addEventListener(
                 error
             );
 
+
+            mostrarToast(
+                "Nao foi possivel copiar."
+            );
+
         }
 
     }
@@ -388,20 +365,9 @@ copyButton.addEventListener(
 
 
 
-/* GERAR NOVAMENTE */
-
-regenerateButton.addEventListener(
-    "click",
-    function () {
-
-        generateMessage();
-
-    }
-);
-
-
-
-/* LIMPAR */
+/* =========================================================
+   LIMPAR
+========================================================= */
 
 clearButton.addEventListener(
     "click",
@@ -410,7 +376,7 @@ clearButton.addEventListener(
         form.reset();
 
 
-        situationField.value =
+        situacao.value =
             "";
 
 
@@ -424,7 +390,9 @@ clearButton.addEventListener(
 
         generatedResult
             .classList
-            .remove("visible");
+            .remove(
+                "visible"
+            );
 
 
         emptyState.style.display =
@@ -433,7 +401,9 @@ clearButton.addEventListener(
 
         resultStatus
             .classList
-            .remove("ready");
+            .remove(
+                "ready"
+            );
 
 
         resultStatus.innerHTML =
@@ -441,7 +411,12 @@ clearButton.addEventListener(
 
 
         localStorage.removeItem(
-            "iapratica-attendance"
+            "iapratica-atendimento"
+        );
+
+
+        mostrarToast(
+            "Formulario limpo."
         );
 
     }
@@ -449,22 +424,122 @@ clearButton.addEventListener(
 
 
 
-/* SALVAR DADOS */
+/* =========================================================
+   SALVAR FORMULARIO
+========================================================= */
 
-function saveForm(values) {
+function salvarFormulario(values) {
 
     localStorage.setItem(
-        "iapratica-attendance",
-        JSON.stringify(values)
+        "iapratica-atendimento",
+        JSON.stringify(
+            values
+        )
     );
 
 }
 
 
 
-/* HISTÓRICO DO DASHBOARD */
+/* =========================================================
+   CARREGAR FORMULARIO
+========================================================= */
 
-function saveActivity() {
+function carregarFormulario() {
+
+    const salvo =
+        localStorage.getItem(
+            "iapratica-atendimento"
+        );
+
+
+    if (!salvo) {
+
+        return;
+
+    }
+
+
+    try {
+
+        const values =
+            JSON.parse(
+                salvo
+            );
+
+
+        if (values.tipo) {
+
+            document
+                .getElementById("tipo")
+                .value =
+                values.tipo;
+
+        }
+
+
+        if (values.negocio) {
+
+            document
+                .getElementById("negocio")
+                .value =
+                values.negocio;
+
+        }
+
+
+        if (values.situacao) {
+
+            situacao.value =
+                values.situacao;
+
+
+            characterCount.textContent =
+                values.situacao.length +
+                " / 1000";
+
+        }
+
+
+        if (values.tom) {
+
+            const radio =
+                document.querySelector(
+                    'input[name="tom"][value="' +
+                    values.tom +
+                    '"]'
+                );
+
+
+            if (radio) {
+
+                radio.checked =
+                    true;
+
+            }
+
+        }
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "Erro ao carregar formulario:",
+            error
+        );
+
+    }
+
+}
+
+
+
+/* =========================================================
+   HISTORICO DO DASHBOARD
+========================================================= */
+
+function salvarHistorico() {
 
     const history =
         JSON.parse(
@@ -490,8 +565,13 @@ function saveActivity() {
                 .toLocaleTimeString(
                     "pt-BR",
                     {
-                        hour: "2-digit",
-                        minute: "2-digit"
+
+                        hour:
+                            "2-digit",
+
+                        minute:
+                            "2-digit"
+
                     }
                 )
 
@@ -501,7 +581,10 @@ function saveActivity() {
     localStorage.setItem(
         "iapratica-history",
         JSON.stringify(
-            history.slice(0,5)
+            history.slice(
+                0,
+                5
+            )
         )
     );
 
@@ -509,94 +592,11 @@ function saveActivity() {
 
 
 
-/* CARREGAR DADOS */
+/* =========================================================
+   TOAST
+========================================================= */
 
-function loadForm() {
-
-    const saved =
-        localStorage.getItem(
-            "iapratica-attendance"
-        );
-
-
-    if (!saved) {
-        return;
-    }
-
-
-    try {
-
-        const values =
-            JSON.parse(saved);
-
-
-        if (values.tipo) {
-
-            document
-                .getElementById("tipo")
-                .value =
-                values.tipo;
-
-        }
-
-
-        if (values.negocio) {
-
-            document
-                .getElementById("negocio")
-                .value =
-                values.negocio;
-
-        }
-
-
-        if (values.situacao) {
-
-            situationField.value =
-                values.situacao;
-
-
-            characterCount.textContent =
-                `${values.situacao.length} / 1000`;
-
-        }
-
-
-        if (values.tom) {
-
-            const radio =
-                document.querySelector(
-                    `input[name="tom"][value="${values.tom}"]`
-                );
-
-
-            if (radio) {
-
-                radio.checked =
-                    true;
-
-            }
-
-        }
-
-    }
-
-    catch (error) {
-
-        console.error(
-            "Erro ao carregar:",
-            error
-        );
-
-    }
-
-}
-
-
-
-/* TOAST */
-
-function showToast(message) {
+function mostrarToast(message) {
 
     toast.textContent =
         message;
@@ -622,6 +622,8 @@ function showToast(message) {
 
 
 
-/* INICIAR */
+/* =========================================================
+   INICIAR
+========================================================= */
 
-loadForm();
+carregarFormulario();
